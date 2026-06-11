@@ -2,3 +2,10 @@
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
+
+/* In app.css and editor.css */
+@import './fonts.css';
+@import './base.css';
+@import './typography.css';
+
+@config '../js/tailwind.site.js';

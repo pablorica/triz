@@ -1,30 +1,30 @@
-# Triz Intelligence:  Docker distribution of a Wordpress Project based in Laravel, TailwindCSS and Vue 3
+# Triz Intelligence:  Docker distribution of a Wordpress Project based in Laravel, TailwindCSS and AlpineJS
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.6.2b-blue.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.1.0-pink.svg)](https://semver.org)
 
 
 ## Staging Server
 
-https://freedmanhilmi.codigo.co.uk/
+https://triz.codigo.co.uk/
 
 
 ## Download Database
 
-https://freedmanhilmi.codigo.co.uk/latest.sql.gz
+https://triz.codigo.co.uk/latest.sql.gz
 
 
 ## Download Plugins
 
-https://freedmanhilmi.codigo.co.uk/plugins.tar.gz
+https://triz.codigo.co.uk/plugins.tar.gz
 
 
 
 ## Download Assets
 
 
-https://freedmanhilmi.codigo.co.uk/uploads.tar.gz
+https://triz.codigo.co.uk/uploads.tar.gz
 
 
 ## Installation
@@ -36,7 +36,7 @@ https://freedmanhilmi.codigo.co.uk/uploads.tar.gz
 ### Install Sage
 
 
-The teheme is based in Sage 11, which is a powerful WordPress starter theme that uses Laravel Blade templating and Vite for asset management.
+The theme is based in Sage 11, which is a powerful WordPress starter theme that uses Laravel Blade templating and Vite for asset management.
 
 [SAGE.md](https://github.com/pablorica/triz/blob/main/SAGE.md)
 
@@ -1117,8 +1117,8 @@ gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 Navigate to your `wp-content` directory and download the plugins archive:
 
 ```bash
-cd /freedmanhilmi.localhost/wp-content
-wget --user codigo --password freedmanhilmi https://freedmanhilmi.codigo.co.uk/plugins.tar.gz
+cd /triz.localhost/wp-content
+wget --user codigo --password triz https://triz.codigo.co.uk/plugins.tar.gz
 mv plugins/ .plugins/
 tar -xzvf plugins.tar.gz
 rm -R .plugins/
@@ -1131,7 +1131,7 @@ rm -R .plugins/
 Media files are stored here:
 
 ```bash
-wget --user codigo --password freedmanhilmi https://freedmanhilmi.codigo.co.uk/uploads.tar.gz
+wget --user codigo --password triz https://triz.codigo.co.uk/uploads.tar.gz
 ```
 
 ### Load Database
@@ -1139,7 +1139,7 @@ wget --user codigo --password freedmanhilmi https://freedmanhilmi.codigo.co.uk/u
 1. Navigate to the database folder:
 
 ```bash
-wget --user codigo --password freedmanhilmi https://freedmanhilmi.codigo.co.uk/latest.sql.gz
+wget --user codigo --password triz https://triz.codigo.co.uk/latest.sql.gz
 ```
 
 2. Import the database using MySQL:
@@ -1152,11 +1152,11 @@ gunzip latest.sql.gz
 mysql -u root -p sparemytime_penny < latest.sql
 ```
 
-**Important!** Set the siteurl and homeurl to `freedmanhilmi.localhost` in the wp-config.php file:
+**Important!** Set the siteurl and homeurl to `triz.localhost` in the wp-config.php file:
 
 ```php
-define('WP_HOME', 'http://freedmanhilmi.localhost');
-define('WP_SITEURL', 'http://freedmanhilmi.localhost');
+define('WP_HOME', 'http://triz.localhost');
+define('WP_SITEURL', 'http://triz.localhost');
 ```
 
 
@@ -1165,19 +1165,19 @@ define('WP_SITEURL', 'http://freedmanhilmi.localhost');
 1. Navigate to the project root:
 
 ```bash
-cd freedmanhilmi.localhost/
+cd triz.localhost/
 ```
 
 2. Run a dry-run search and replace:
 
 ```bash
-wp search-replace 'canvascareers.localhost' 'freedmanhilmi.localhost' --dry-run --allow-root --all-tables
+wp search-replace 'canvascareers.localhost' 'triz.localhost' --dry-run --allow-root --all-tables
 ```
 
 3. If everything looks good, run it for real:
 
 ```bash
-wp search-replace 'canvascareers.localhost' 'freedmanhilmi.localhost' --allow-root --all-tables
+wp search-replace 'canvascareers.localhost' 'triz.localhost' --allow-root --all-tables
 # ---> Success: Made 27 replacements..
 ```
 
@@ -1185,9 +1185,9 @@ wp search-replace 'canvascareers.localhost' 'freedmanhilmi.localhost' --allow-ro
 ###  Optional: Create a Database Backup
 
 ```bash
-cd /freedmanhilmi.localhost/wp-content/themes/wp-codigo-ltv/_database
+cd /triz.localhost/wp-content/themes/wp-codigo-ltv/_database
 
-mysqldump -u root -proot freedmanhilmi | gzip > wp-codigo-ltv.sql.gz
+mysqldump -u root -proot triz | gzip > wp-codigo-ltv.sql.gz
 ```
 
 

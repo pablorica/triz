@@ -16,7 +16,12 @@
       "defaultDuotone": false,
       "defaultGradients": false,
       "defaultPalette": false,
-      "duotone": []
+      "duotone": [],
+      "palette": [
+        { "name": "Black", "slug": "black", "color": "#000" },
+        { "name": "Dark Plum", "slug": "darkplum", "color": "#2E0019" },
+        { "name": "White", "slug": "white", "color": "#fff" }
+      ]
     },
     "custom": {
       "spacing": {},
@@ -32,6 +37,30 @@
     "typography": {
       "defaultFontSizes": false,
       "customFontSize": false
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "color": {
+          "text": "var:preset|color|orange",
+          "background": "transparent"
+        },
+        "typography": {
+          "textDecoration": "underline"
+        },
+        "spacing": {
+          "padding": {
+            "top": "20px",
+            "right": "20px",
+            "bottom": "20px",
+            "left": "20px"
+          }
+        },
+        "border": {
+          "radius": "10px"
+        }
+      }
     }
   }
 }

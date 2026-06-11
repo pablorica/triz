@@ -1,0 +1,85 @@
+
+/*
+Normalised to 1920px viewport
+Formula: font-size: (target_px / 1920) * 100vw;
+24px → 1.25vw
+192px → 10vw
+128px → 6.6667vw
+96px → 5vw
+64px → 3.3333vw
+48px → 2.5vw
+16px → 0.8333vw
+*/
+/* Body (base) */
+body {
+  @apply font-light; /* font-weight: 300; */
+  @apply  tracking-wide; /* letter-spacing: 2% */
+  @apply text-base lg:text-[1.25vw]; /* 16px mobile, 24px at 1920 */
+  /* Original text-base lg:text-2xl; /* 16px/1.05 24px/1.05 */
+}
+/* Pull Out */
+.is-style-pull-out {
+  @apply font-medium; /* font-weight: 500;*/
+  @apply tracking-normal md:tracking-wide; /* letter-spacing: 0% 2% (custom) */
+  @apply text-9xl lg:text-[10vw]; /* 128px mobile, 192px at 1920 */
+  /* Original text-9xl lg:text-10xl; /* 128px/1.05 192px/1.05 */
+}
+/* Heading 1 */
+h1, .h1 {
+  @apply font-medium;
+  @apply tracking-normal; /* letter-spacing: 0% */
+  @apply text-[clamp(2.5rem,16vw,5rem)] lg:text-[6.6667vw] lg:leading-none;
+  /*
+   Desktop: 128px at 1920px
+   Mobile: 80px-> clamp(MIN, PREFERRED, MAX)
+    MIN → 2.5rem (~40px) → smallest allowed size
+    PREFERRED → 8vw → scales with viewport width
+    MAX → 5rem (~80px) → largest allowed size
+
+    Original text-8lg lg:text-9xl/none; /* 80px/1 128px/1
+  */
+  overflow-wrap: anywhere;
+}
+/* Heading 2 */
+h2, .h2 {
+  @apply font-medium;
+  @apply tracking-normal;
+  @apply text-[13.8vw] sm:text-6xl lg:text-[5vw]; /* 56px mobile, 96px at 1920 */
+  /* original text-6xl lg:text-8xl; /* 56px/1.05 96px/1.05 */
+}
+/* Heading 3 */
+h3, .h3 {
+  @apply font-medium;
+  @apply tracking-normal;
+  @apply text-5xl lg:text-[3.3333vw]; /* 40px mobile, 64px at 1920 */
+  /* original text-5xl lg:text-7xl; /* 40px/1.05 64px/1.05 */
+}
+/* Heading 4 */
+h4, .h4 {
+  @apply font-medium; /* font-weight: 500; */
+  @apply tracking-normal; /* letter-spacing: 0% */
+  @apply text-4xl md:text-[2.5vw]; /* 32px mobile, 48px at 1920 */
+  /* original text-4xl lg:text-5xl; /* 32px/1.05 48px/1.05 */
+}
+/* Body Heading 1 */
+strong,  b {
+  @apply font-medium; /* font-weight: 500; */
+  /*@apply text-base md:text-2xl; /* 16px/1.05 24px/1.05 */
+  @apply tracking-normal lg:tracking-wide; /* letter-spacing: 0% 2% */
+}
+/* Body Copy 2 */
+.is-style-small,
+small, .small {
+  @apply font-light; /* font-weight: 300; */
+  @apply tracking-wide lg:tracking-normal; /* letter-spacing: 2% 0% */
+  @apply text-xs lg:text-[0.8333vw] lg:leading-[1.1]; /* 8px mobile, 16px at 1920 */
+  /* original text-xs lg:text-base/tighter; /* 8px/1.1 16px/1.1 */
+}
+/* Body Heading 2 */
+.is-style-small strong,
+.is-style-small b,
+small strong, small b {
+  @apply font-medium; /* font-weight: 500; */
+  /*@apply text-xs md:text-base/tighter; /* 8px/1.1 16px/1.1 */
+  @apply  tracking-wide lg:tracking-normal; /* letter-spacing: 2% 0% */
+}

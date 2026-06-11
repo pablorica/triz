@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.1.0] - 2026-06-11
+
+### Added
+
+ - Colour palette
+ - Font family
 
 ## [0.0.10] - 2026-03-08
 
