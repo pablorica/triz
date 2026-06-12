@@ -1,0 +1,46 @@
+
+header {
+  .menu-overlay {
+    @apply m-0 list-none p-0;
+    li {
+      @apply m-0 text-center;
+    }
+    a {
+      /* h2 */
+      @apply font-medium;
+      @apply tracking-normal;
+      @apply text-[13.8vw] sm:text-6xl lg:text-[5vw]; /* 56px mobile, 96px at 1920 */
+
+      @apply text-black text-center no-underline  transition-colors;
+      &:hover, &:focus {
+        @apply text-orange;
+      }
+    }
+    & > li + li {
+      @apply mt-5 md:mt-7;
+    }
+  }
+
+  .menu-label {
+    .open-label {
+      /*color: var(--header-text-color);*/
+    }
+    .close-label {
+      @media (min-width:theme("screens.sm") ) and (max-width: calc(theme("screens.md") - 1px)) {
+        color: white;
+      }
+    }
+  }
+  .logo-icon svg path {
+    /*fill: var(--header-text-color);*/
+  }
+}
+body.menu-open {
+  header {
+    .logo-icon svg path {
+      @media (min-width:theme("screens.sm") ) {
+        fill: white;
+      }
+    }
+  }
+}

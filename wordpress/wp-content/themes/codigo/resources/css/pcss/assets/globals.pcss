@@ -1,0 +1,85 @@
+
+
+:where(.is-layout-grid),
+:where(.wp-block-columns.is-layout-flex),
+:where(.is-layout-flex),
+.grid {
+  gap: 10px;
+  @media  (min-width: theme("screens.md")) {
+    /*
+  Normalised to 1920px viewport
+  Formula: font-size: (target_px / 1920) * 100vw;
+  16px → 0.8333vw
+  */
+    gap: 0.8333vw;
+  }
+}
+
+a {
+  transition: color 0.25s ease;
+}
+a.underline,
+.underline a {
+  text-decoration: underline;
+}
+
+main#main .wp-block-quote {
+  cite {
+    padding-top: 30px;
+    font-style: normal;
+  }
+}
+
+main#main .wp-block-cover {
+  /*
+  Normalised to 1920px viewport
+  Formula: font-size: (target_px / 1920) * 100vw;
+  288px → 15vw
+  822px → 42.8125vw
+  */
+  @apply min-h-[max(90vw,300px)] md:min-h-[min(50vw,90vh)];
+  /*
+    @apply min-h-[15vw] lg:min-h-[min(50vw,90vh)];
+    original min-h-[288px] lg:min-h-[822px];
+  */
+}
+
+main#main .wp-block-group.is-layout-grid {
+
+  @media  (max-width: calc(theme("screens.md") - 1px)) {
+    grid-template-columns: 1fr !important; /* Override the default 2-column layout on mobile */
+  }
+  & > .wp-block-group {
+    min-height: max(90vw,300px);
+    @media  (min-width: theme("screens.md")) {
+      /*
+      Normalised to 1920px viewport
+      Formula: font-size: (target_px / 1920) * 100vw;
+      412px → 412 / 1920 * 100 = 21.4583vw
+      */
+      min-height: 21.4583vw;
+      /* original min-height: 412px; */
+    }
+
+    .wp-block-group {
+      min-height: 0;
+    }
+  }
+}
+
+
+.wp-block-spacer:not(.stack-section__shadow):not(.flex-1) {
+  @media (max-width: calc(theme("screens.md") - 1px)) {
+    max-height:60px;
+  }
+}
+.wp-block-spacer.flex-1 {
+  @media (max-width: calc(theme("screens.md") - 1px)) {
+    min-height:60px;
+  }
+}
+.wp-block-spacer.is-style-mobile-only\:hidden {
+  @media (max-width: calc(theme("screens.md") - 1px)) {
+    display: none;
+  }
+}

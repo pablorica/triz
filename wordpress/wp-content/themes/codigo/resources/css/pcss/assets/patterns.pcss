@@ -1,0 +1,481 @@
+:root {
+  --icon-times: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 32 32'><g><polygon fill='black' points='17.3333333 14.6666667 17.3333333 0 16 0 14.6666667 0 14.6666667 14.6666667 0 14.6666667 0 16 0 17.3333333 14.6666667 17.3333333 14.6666667 32 16 32 17.3333333 32 17.3333333 17.3333333 32 17.3333333 32 16 32 14.6666667 17.3333333 14.6666667'/></g></svg>");
+
+  --icon-line: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 32 32'><rect x='0' y='14.6666667' width='32' height='2.6666666' fill='black' /></svg>");
+}
+
+/* Styles */
+.is-layout-grid.is-style-gap-0  {
+  gap: 0;
+}
+
+.is-style-parallax {
+  overflow: hidden !important;
+  .wp-block-cover__image-background {
+    will-change: transform;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.is-style-first-order-mobile {
+  @apply order-first md:order-last;
+}
+
+/* Variations */
+.wp-element-button,
+.wp-block-button__link {
+  @apply p-0 md:p-5;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  text-underline-offset: 10%;
+  &:hover {
+    color: color-mix(in srgb, var(--wp--preset--color--orange) 60%, transparent);
+  }
+}
+
+.button-inverse {
+  .wp-element-button,
+  .wp-block-button__link {
+    background-color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--white);
+    &:hover {
+      color: color-mix(in srgb, var(--wp--preset--color--white) 60%, transparent);
+    }
+  }
+}
+
+.full-height-group {
+  @apply min-h-dvh flex items-center;
+  & > * {
+    @apply w-full;
+  }
+}
+.md-full-height-group {
+  @apply md:min-h-dvh md:flex md:items-center;
+  & > * {
+    @apply md:w-full;
+  }
+}
+
+/* Patterns */
+.intro-pattern {
+  @media (min-width: theme("screens.md")) {
+    max-width: calc(50vw - 1rem) !important; /* 6 columns */
+  }
+  figure {
+    padding-bottom: 50px;
+  }
+  .wp-block-heading {
+    padding-bottom: 30px;
+  }
+}
+
+
+.link-card {
+  position: relative;
+  transition: background-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 24px;
+  padding: min(4vh,44px) calc(16.67vw - 1rem);
+
+  @media (max-width: calc(theme("screens.md") - 1px)) {
+    min-height: auto !important;
+  }
+  @media (min-width: theme("screens.md")) {
+    /*
+      Normalised to 1920px viewport
+      Formula: font-size: (target_px / 1920) * 100vw;
+      88px → 4.5833vw
+      70px → 3.6458vw
+    */
+    padding: 4.5833vw 3.6458vw 4.5833vw calc(8.34vw - 1rem);
+    /* original padding: 88px 70px 88px calc(8.34vw - 1rem); */
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+
+    background-image:
+      var(--icon-times),
+      var(--icon-times),
+      var(--icon-times),
+      var(--icon-times);
+    background-repeat: no-repeat;
+    background-position:
+      top left,
+      top right,
+      bottom left,
+      bottom right;
+
+    inset: -5px;
+    background-size: 10px 10px;
+    @media (min-width: theme("screens.md")) {
+      background-size: 22px 22px;
+      inset: -11px;
+    }
+  }
+  &:hover {
+    /* background-color: color-mix(
+      in srgb,
+      var(--wp--preset--color--orange) 60%,
+      transparent
+    ); */
+    background-color: var(--wp--preset--color--orange);
+    color: var(--wp--preset--color--white);
+    .wp-block-heading {
+      color: var(--wp--preset--color--white);
+    }
+    .wp-block-button {
+      a {
+        color: var(--wp--preset--color--white);
+      }
+    }
+  }
+  .wp-block-heading {
+    @media (min-width: theme("screens.md")) {
+      /*
+        Normalised to 1920px viewport
+        Formula: font-size: (target_px / 1920) * 100vw;
+        100px → 5.2083vw
+      */
+      min-height:5.2083vw;
+      /* original min-height: 100px; */
+    }
+  }
+  .wp-block-button {
+    a {
+      position: static;
+      padding: 0;
+    }
+  }
+}
+@media (min-width: theme("screens.md")) {
+  .link-card {
+    /* hide visually on desktop */
+    .wp-block-button {
+      height: 0;
+      a {
+        /*opacity: 0;*/
+        height: 0;
+        padding: 0;
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+
+.wp-block-carousel {
+  @media (max-width: calc(theme("screens.md") - 1px)) {
+    max-width: calc(100vw - 20px);
+  }
+  @media (min-width: theme("screens.lg")) {
+    /* max-width: calc(50vw - 1rem) !important; /* 6 columns */
+  }
+  .carousel-viewport {
+    overflow: hidden;
+    &.h-full {
+      .acf-innerblocks-container {
+        height: 100%;
+        & > * {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 2rem;
+    max-width: none;
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    @media  (max-width: calc(theme("screens.md") - 1px)) {
+      height: calc(100dvh - 60px);
+      min-height: 1px !important;
+      max-width: calc(100vw - 20px);
+      overflow: hidden;
+
+      .wp-block-group.is-layout-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto 1fr; /* key line */
+        height: 100%; /* or a defined height if needed */
+        & > .wp-block-group {
+          min-height: 1px !important;
+          /* First div */
+          &:first-child {
+            height: max(90vw, 300px);
+          }
+          /* Second div */
+          &:last-child {
+            height: auto; /* remove forced height */
+          }
+          .wp-block-spacer.flex-1 {
+            min-height: 1px !important;
+          }
+        }
+      }
+    }
+
+
+  }
+  /* If you want 2 slides visible:
+  .carousel-slide {
+    flex: 0 0 50%;
+  } */
+
+  .carousel-prev {
+    margin-right: 24px
+  }
+
+  .navigation-arrows-top {
+    @media (max-width: calc(theme("screens.md") - 1px)) {
+      height: 0;
+    }
+    @media (min-width: theme("screens.md")) {
+      margin-bottom: -15px;
+    }
+  }
+
+  &.mobile-navigation-middle {
+    @media (max-width: calc(theme("screens.md") - 1px)) {
+      .navigation-arrows-top {
+        transform: translateY(calc( max(90vw, 300px) + 10px));
+      }
+    }
+  }
+}
+
+
+.testimonial-block {
+  blockquote {
+    max-width: 930px;
+  }
+  .wp-block-image {
+    @media (max-width: calc(theme("screens.md") - 1px)) {
+      max-width:calc(33.34vw - 1rem);
+    }
+  }
+}
+
+main#main .horizontal-banner.wp-block-cover {
+  /*
+  Normalised to 1920px viewport
+  Formula: font-size: (target_px / 1920) * 100vw;
+  60px → 3.125vw
+  120px → 6.25vw
+  466px → 24.2708vw
+  822px → 42.8125vw
+  */
+  @apply -mx-5 px-5;
+  @apply pt-[3.125vw] lg:pt-[6.25vw];
+  /* original pt-[60px] lg:pt-[120px]; */
+  @apply min-h-[70vh] md:min-h-[calc(100vh-50px)];
+  /* original  min-h-[466px] lg:min-h-[822px]; */
+  .wp-block-heading {
+    @media (min-width: theme("screens.lg")) {
+      @apply max-w-[calc(25vw-1rem)]; /* 3 columns */
+    }
+  }
+  .wp-block-read-more {
+    @apply transition-colors duration-300 ease-in-out;
+    @apply text-left underline text-white;
+    @apply ml-0! pt-11 lg:pt-16;
+    @apply hover:opacity-60;
+  }
+}
+
+
+.scroll-accordion {
+  overscroll-behavior: contain;
+  @apply -mx-5;
+  position: relative;
+  padding-top: 40px;
+
+  @media (min-width: theme("screens.md")) {
+    padding-top: 65px;
+  }
+
+  &.is-tap-accordion {
+    min-height: auto !important;
+    padding-top: 0;
+  }
+
+}
+
+.scroll-accordion__sticky {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  top: 40px;
+
+  @media (min-width: theme("screens.md")) {
+    top: 65px;
+  }
+
+  .scroll-accordion.is-tap-accordion & {
+    position: static;
+    top: auto;
+  }
+}
+
+.scroll-accordion__header {
+  .scroll-accordion__title {
+    padding-bottom: clamp(20px, 2vw, 65px);
+
+    @media (min-width: theme("screens.md")) {
+      padding-bottom: 0;
+    }
+  }
+
+  figure {
+    max-height: 25vh;
+
+    @media (min-width: 400px) {
+      max-height: 50vh;
+    }
+  }
+}
+
+.scroll-accordion__track {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-accordion__item {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  .scroll-accordion__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  &.is-open {
+    .scroll-accordion__body {
+      max-height: 500px;
+    }
+  }
+
+  /* In tap mode the body may need more room than desktop */
+  .scroll-accordion.is-tap-accordion &.is-open {
+    .scroll-accordion__body {
+      max-height: 1200px;
+    }
+  }
+}
+
+/* Toggle button */
+.scroll-accordion__toggle {
+  display: none;
+}
+/* Only visible in tap mode */
+.scroll-accordion.is-tap-accordion {
+  .scroll-accordion__toggle {
+    @apply font-medium;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    height: 100%;
+    /* max-height: 2.5rem; */
+    max-height: 100%;
+    border: none;
+    background: transparent;
+    color: currentColor;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(var(--spacing) * 5);
+      transform: translateY(-50%);
+      aspect-ratio: 1 / 1;
+      height: 16px;
+      max-height: 25px;
+      max-width: 25px;
+      background-image: var(--icon-times);
+      background-repeat: no-repeat;
+      background-position:center;
+      @media (width >= 960px) {
+        height: 1.25vw;
+      }
+    }
+  }
+
+  .scroll-accordion__item.is-open .scroll-accordion__toggle {
+    &::after {
+      background-image: var(--icon-line);
+    }
+  }
+
+}
+
+
+
+/* Traffic Lights Scroll No Stacked (old version)
+.traffic-lights-scroll-wrapper {
+  position: relative;
+  height: 400vh; /* 4 stages
+
+.traffic-lights-scroll {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.traffic-lights-scroll .wp-block-heading {
+  transition: opacity 0.3s ease;
+}
+*/
+
+/* Traffic Lights Scroll Stacked (new version) */
+.traffic-lights-scroll-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.traffic-lights-scroll {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.traffic-lights-scroll .wp-block-heading {
+  transition: opacity 0.3s ease;
+}
+
+body.home {
+  .stack-section--traffic {
+    min-height: 400svh !important; /* 4 traffic lights stages */
+  }
+}

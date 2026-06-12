@@ -2,7 +2,7 @@
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.1.0-pink.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.1.1-pink.svg)](https://semver.org)
 
 
 ## Staging Server
@@ -242,6 +242,151 @@ Import  `base.css` in `app.css`
 
 For more details on customizing fonts with Tailwind, see the [Tailwind CSS documentation](https://tailwindcss.com/docs/font-family).
 
+### Font sizes
+
+We are going to use our own font sizes set across Tailwind CSS and Gutenberg editor. Our goal is to:
+
+- Define font sizes once in CSS
+- Let Tailwind use `var(--text-*)` tokens
+- Automatically generate a `theme.json` fontSizes for Gutenberg blocks
+
+#### 1. Define font sizes in `base.css` and  `tailwind.site.js`
+
+In `tailwind.site.js` declare the base font size as a CSS variable:
+
+```js
+export default {
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        ':root': {
+          // Fluid typography from 1 rem to 1.2 rem with fallback to 26px.
+          fontSize: '24px', //<- Base font size. The rem values are calculated based on this.
+          letterSpacing: '0',
+          lineHeight: '26px', // calc(1.5 / 1),
+          fontWeight: '300',
+
+          // Safari resize fix.
+          minHeight: '0vw',
+        },
+      })
+    }),],
+};
+```
+
+In `resources/css/base.css`, declare your design tokens as CSS variables (you can add media breakpoint queries for responsive font sizes):
+
+```css
+@theme {
+  ...
+  --text-base: clamp(1rem,1.25vw,1rem);
+}
+@layer base {
+  :root {
+    @media (min-width: theme("screens.lg")) {
+      --text-base: 1.25vw; /* 24px at 1920px */
+    }
+    ...
+  }
+}
+```
+
+These are the default values
+
+```css
+@theme {
+  --text-xs: 0.75rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem; 
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+  ...
+}
+  ```
+
+
+#### 3. Add font sizes to Gutenberg
+In `themes/codigo/theme.json` edit the `settings.typography.fontSizes` section to display your custom colours in the Gutenberg color picker:
+
+This is the default value
+
+```json
+{
+  "settings": {
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": "8px"
+        },
+        {
+          "name": "sm",
+          "slug": "sm",
+          "size": ".875rem"
+        },
+        {
+          "name": "base",
+          "slug": "base",
+          "size": "1rem"
+        },
+        {
+          "name": "lg",
+          "slug": "lg",
+          "size": "1.125rem"
+        },
+        {
+          "name": "xl",
+          "slug": "xl",
+          "size": "1.25rem"
+        },
+        {
+          "name": "2xl",
+          "slug": "2xl",
+          "size": "1.5rem"
+        },
+        {
+          "name": "3xl",
+          "slug": "3xl",
+          "size": "1.875rem"
+        },
+        {
+          "name": "4xl",
+          "slug": "4xl",
+          "size": "2.25rem"
+        },
+        {
+          "name": "5xl",
+          "slug": "5xl",
+          "size": "3rem"
+        },
+        {
+          "name": "6xl",
+          "slug": "6xl",
+          "size": "3.75rem"
+        },
+        {
+          "name": "8xl",
+          "slug": "8xl",
+          "size": "6rem"
+        },
+        {
+          "name": "9xl",
+          "slug": "9xl",
+          "size": "8rem"
+        }
+      ]
+    }
+  }
+}
+```
 
 
 ### Colours
@@ -543,7 +688,7 @@ docker compose run --rm node sh -lc "npm install -D postcss postcss-import postc
 resources/css/pcss/...
 ```
 
-### 3. Create `postcss.config.js`
+### 3. Create `themes/codigo/postcss.config.js`
 
 Create `postcss.config.js` with ESM syntax (ESM stands for ECMAScript Modules, which is a standardized module system in JavaScript. It allows developers to organize code into reusable modules, making it easier to manage dependencies and maintain code.)
 

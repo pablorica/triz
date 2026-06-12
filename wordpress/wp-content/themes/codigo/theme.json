@@ -36,7 +36,39 @@
     },
     "typography": {
       "defaultFontSizes": false,
-      "customFontSize": false
+      "customFontSize": false,
+      "fontSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": "8px"
+        },
+        {
+          "name": "sm",
+          "slug": "sm",
+          "size": ".875rem"
+        },
+        {
+          "name": "base",
+          "slug": "base",
+          "size": "var(--text-base)"
+        },
+        {
+          "name": "2xl",
+          "slug": "2xl",
+          "size": "var(--text-2xl)"
+        },
+        {
+          "name": "5xl",
+          "slug": "5xl",
+          "size": "var(--text-5xl)"
+        },
+        {
+          "name": "7xl",
+          "slug": "7xl",
+          "size": "var(--text-7xl)"
+        }
+      ]
     }
   },
   "styles": {

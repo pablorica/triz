@@ -1,0 +1,69 @@
+
+footer {
+  a {
+    @apply no-underline;
+  }
+
+  nav {
+    a {
+      @apply no-underline  transition-colors;
+      &:hover, &:focus {
+        @apply text-orange;
+      }
+    }
+  }
+  .footer-bottom {
+    @media  (max-width: calc(theme("screens.md") - 1px)) {
+      .wp-block-column:nth-child(2) {
+        @apply order-last;
+      }
+      .wp-block-column:nth-child(3) {
+        flex: 0 0 calc(66.67vw - 1rem);
+        max-width: calc(66.67vw - 1rem);
+      }
+    }
+    @media  (min-width: theme("screens.md")) {
+      .wp-block-column:nth-child(1) {
+        /* 5 columns */
+        flex: 0 0 calc(41.67% - 2rem);
+        max-width: calc(41.67% - 2rem);
+      }
+      .wp-block-column:nth-child(2) {
+        /* 5 columns */
+        flex: 0 0 calc(41.67% - 2rem);
+        max-width: calc(41.67% - 2rem);
+      }
+      .wp-block-column:nth-child(3) {
+        /* 2 columns */
+        flex: 0 0 calc(16.66% - 2rem);
+        max-width: calc(16.66% - 2rem);
+        margin-left: auto;
+      }
+    }
+    .menu-footer-container {
+      ul {
+        column-count: 2;
+        column-gap: 10px;
+        @media  (min-width: theme("screens.md")) {
+          /*
+          Normalised to 1920px viewport
+          Formula: font-size: (target_px / 1920) * 100vw;
+          16px → 0.8333vw
+          */
+          column-gap: 0.8333vw;
+        }
+        li {
+
+          /* break-inside: avoid; /* Prevent items from breaking across columns */
+        }
+        a {
+          @apply opacity-100 transition-opacity;
+          &:hover, &:focus {
+            @apply opacity-60;
+          }
+        }
+      }
+    }
+  }
+
+}

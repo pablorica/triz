@@ -1,0 +1,137 @@
+/* ─── Shared styles (all devices) ───────────────────────────────────────── */
+body.home:not(.header-in-position) {
+  .site-header__logo {
+    transform-origin: left center;
+    will-change: transform;
+    transform: scale(1.5);
+  }
+  .site-header__inner {
+    will-change: transform;
+    transform: translateY(calc(50vh - 50%));
+  }
+}
+
+body.home {
+  &.home-intro-active {
+    overflow: hidden;
+    .site-header__logo,
+    .menu-label,
+    .page-header-bottom {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+  }
+  &.home-intro-done {
+    .site-header__logo,
+    .menu-label,
+    .page-header-bottom {
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+  }
+
+  .home-stack {
+    position: relative;
+  }
+
+  .stack-section {
+    position: relative;
+    min-height: 200svh;
+  }
+
+  .stack-section + .stack-section {
+    margin-top: -100svh;
+  }
+
+  .stack-section__panel {
+    position: sticky;
+    top: 0;
+    min-height: 100svh;
+    background: white;
+    overflow: hidden;
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    @media (min-width: theme("screens.md")) {
+      margin-left: -5rem;
+      margin-right: -5rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  .stack-section__shadow {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.20);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    height: 100% !important;
+    width: calc(100% + 1.25rem);
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+    @media (min-width: theme("screens.md")) {
+      width: calc(100% + 10rem);
+      margin-left: -5rem;
+      margin-right: -5rem;
+    }
+  }
+
+  .stack-section__content {
+    position: relative;
+    z-index: 3;
+  }
+
+  .stack-section:nth-child(1) .stack-section__panel { z-index: 1; }
+  .stack-section:nth-child(2) .stack-section__panel { z-index: 2; }
+  .stack-section:nth-child(3) .stack-section__panel { z-index: 3; }
+  .stack-section:nth-child(4) .stack-section__panel { z-index: 4; }
+}
+
+/* ─── Touch device styles ────────────────────────────────────────────────────
+   JS positions .stack-section__panel elements absolutely inside a fixed
+   .hero-stack container. The desktop sticky/height layout must be neutralised
+   so it doesn't fight GSAP's absolute positioning. */
+body.touch-device.home {
+  /* Prevent iOS rubber-band overscroll from dragging fixed elements */
+  overscroll-behavior: none;
+  /* Disable parallax */
+  .is-style-parallax .wp-block-cover__image-background {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  /* Collapse the scroll-space wrappers — JS owns layout on touch */
+  .stack-section {
+    min-height: 0 !important;
+    height: 0 !important;
+    margin-top: 0 !important;
+    overflow: visible;
+  }
+
+  /* Undo sticky — GSAP sets position:absolute on these via inline style */
+  .stack-section__panel {
+    position: relative !important;
+    min-height: 0 !important;
+  }
+
+  /* Show touch footer as fullscreen panel, hide desktop footer */
+  .touch-footer {
+    display: flex;
+    flex-direction: column;
+    .footer-logo { margin-top: auto; }
+    .footer-copyright { margin-top: 0; }
+  }
+  .desktop-footer {
+    display: none;
+  }
+}
+
+/* Hide touch footer on desktop */
+body.home:not(.touch-device) {
+  .touch-footer {
+    display: none;
+  }
+}

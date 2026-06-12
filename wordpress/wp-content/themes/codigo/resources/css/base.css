@@ -24,21 +24,58 @@
   --font-weight-black: 900; */
 
   /* Font Size */
+  /*
+  Normalised to 1920px viewport
+  Formula: font-size: (target_px / 1920) * 100vw;
+  base: 24px → 1.25vw
+  h1: 72px → 3.75vw
+  h2: 36px → 1.875vw
+  7xl (large): 100px → 5.2083vw
 
-  --text-xs: 8px; /* orig 0.75rem (12px) */
-  /*--text-base: 1rem; /* 16px */
-  /*--text-2xl: 1.5rem /*  24px */
-  --text-4xl: 32px; /* orig  2.25rem (36px) */
-  --text-5lg: 40px; /* Custom */
-  /*--text-5xl: 3rem  /*  48px */
-  --text-6xl: 56px; /* orig 3.75rem (60px) */
-  --text-7xl: 64px; /* orig 4.5rem (72px) */
-  --text-8lg: 80px; /* Custom */
-  /*--text-8xl: 6rem /* 96px */
-  /*--text-9xl: 8rem /* 128px */
-  --text-10xl: 12rem; /* 192px */
+  192px → 10vw
+  128px → 6.6667vw
+  96px → 5vw
+  64px → 3.3333vw
+  48px → 2.5vw
+  16px → 0.8333vw
+  */
+  --text-base: clamp(1rem,1.25vw,1rem);
+  /*
+  (orig 1rem*24 = 24px)
+  Desktop: 1.25vw (24px at 1920px)
+  Mobile: 24px → clamp(MIN, PREFERRED, MAX)
+    MIN → 1rem (24px) → smallest allowed size
+    PREFERRED → 1.25vw → scales with viewport width
+    MAX → 1rem (24px) → largest allowed size
 
-
+  */
+  --text-2xl: clamp(1.25rem,8vw,1.875rem)
+  /*
+  (orig 1.5rem*24 = 36px)
+  Desktop: 1.875vw (36px at 1920px)
+  Mobile: 30px → clamp(MIN, PREFERRED, MAX)
+    MIN → 1.25rem (~30px) → smallest allowed size
+    PREFERRED → 6vw → scales with viewport width
+    MAX → 1.875rem (~36px) → largest allowed size
+  */
+  --text-5xl: clamp(1.75rem,13vw,2.5rem);
+  /*
+  (orig 3rem*24 = 72px)
+  Desktop: 72px at 1920px
+  Mobile: 60px-> clamp(MIN, PREFERRED, MAX)
+    MIN → 1.75rem (~42px) → smallest allowed size
+    PREFERRED → 13vw → scales with viewport width
+    MAX → 2.5rem (~60px) → largest allowed size
+  */
+  --text-7xl: clamp(3.75rem,15vw,4.5rem);
+  /*
+  (orig 4.5rem*24 = 108px)
+  Desktop: 100px at 1920px (5.2083vw)
+  Mobile: 80px-> clamp(MIN, PREFERRED, MAX)
+    MIN → 3.75rem (~90px) → smallest allowed size
+    PREFERRED → 15vw → scales with viewport width
+    MAX → 4.5rem (~108px) → largest allowed size
+  */
 
   /* Letter Spacing */
 
@@ -92,6 +129,18 @@
 
 
 @layer base {
+  :root {
+    --wp--style--global--content-size: 100vw !important;
+    @media (min-width: theme("screens.lg")) {
+      --wp--style--global--content-size: 60vw !important;
+      /* Original --wp--style--global--content-size: 1144px !important; */
+      --text-base: 1.25vw; /* 24px at 1920px */
+      --text-2xl: 1.875vw;  /* 36px at 1920px */
+      --text-5xl: 3.75vw; /*  72px at 1920px  */
+      --text-7xl: 5.2083vw; /*  100px at 1920px */
+
+    }
+  }
   html {
     /* THis is configured in resources/js/tailwind.site.js */
 
@@ -114,13 +163,7 @@
   }
 
 
-  :root {
-    --wp--style--global--content-size: 100vw !important;
-    @media (min-width: theme("screens.lg")) {
-      --wp--style--global--content-size: 60vw !important;
-      /* Original --wp--style--global--content-size: 1144px !important; */
-    }
-  }
+
 
   :root :where(.is-layout-flow) > p,
   :root :where(.is-layout-constrained) > p {

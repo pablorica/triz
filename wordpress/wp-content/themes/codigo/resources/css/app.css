@@ -9,3 +9,11 @@
 @import './typography.css';
 
 @config '../js/tailwind.site.js';
+
+/* PCSS files */
+
+/* Functions */
+/*@import "./pcss/functions";*/
+
+/* Assets */
+/*@import "./pcss/assets/svgs";*/

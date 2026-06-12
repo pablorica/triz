@@ -8,10 +8,10 @@ export default {
     plugin(function({ addBase, theme }) {
       addBase({
         ':root': {
-          // Fluid typography from 1 rem to 1.2 rem with fallback to 20px.
-          fontSize: '16px',
+          // Fluid typography from 1 rem to 1.2 rem with fallback to 26px.
+          fontSize: '24px',
           letterSpacing: '0',
-          lineHeight: '17px', // calc(1.5 / 1),
+          lineHeight: '26px', // calc(1.5 / 1),
           fontWeight: '300',
 
           // Safari resize fix.
@@ -33,7 +33,7 @@ export default {
           // fontFamily: theme('fontFamily.serif'),
         },
         'mark': {
-          backgroundColor: theme('colors.primary.DEFAULT'),
+          backgroundColor: theme('colors.darkplum'),
           color: theme('colors.white')
         },
       })

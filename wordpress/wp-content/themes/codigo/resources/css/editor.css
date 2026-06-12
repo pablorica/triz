@@ -1,2 +1,6 @@
 @import "tailwindcss";
+
+/* In app.css and editor.css */
 @import './fonts.css';
+@import './base.css';
+@import './typography.css';
