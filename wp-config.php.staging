@@ -1,6 +1,4 @@
 <?php
-define('MYSQL_CLIENT_FLAGS', 0);
-
 // === Load DB creds from env (set in docker-compose) ===
 define('DB_NAME',     getenv('WORDPRESS_DB_NAME')     ?: getenv('MYSQL_DATABASE') ?: 'default');
 define('DB_USER',     getenv('WORDPRESS_DB_USER')     ?: getenv('MYSQL_USER')     ?: 'default');
