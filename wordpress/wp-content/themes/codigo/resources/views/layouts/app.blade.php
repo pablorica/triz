@@ -46,7 +46,6 @@
 
     opacity-0 !opacity-0
     leading-none !leading-none
-
     --}}
 
 

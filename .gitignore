@@ -193,8 +193,8 @@ wordpress/wp-content/themes/codigo/assets/css/*.map
 
 
 # Ignore everything in public
-wordpress/wp-content/themes/codigo/public/*
+!wordpress/wp-content/themes/codigo/publicb/
+wordpress/wp-content/themes/codigo/publicb/*
 # But allow the Vite build output
-!wordpress/wp-content/themes/codigo/public/build/
-!wordpress/wp-content/themes/codigo/public/build/**
-
+!wordpress/wp-content/themes/codigo/publicb/build/
+!wordpress/wp-content/themes/codigo/publicb/build/**
