@@ -24,7 +24,7 @@ server {
     auth_basic_user_file /srv/docker/wordpress4/.htpasswd-pma;
 
     # Strip /pma prefix when proxying
-    proxy_pass http://127.0.0.1:8106/;
+    proxy_pass http://127.0.0.1:8108/;
     proxy_http_version 1.1;
 
     proxy_set_header Host              $host;
