@@ -54,7 +54,7 @@ services:
     ports:
       - "${WORDPRESS_SSL_PORT}:80"
     environment:
-      WORDPRESS_DB_HOST: ${MYSQL_HOST}
+      WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
@@ -93,7 +93,7 @@ services:
     working_dir: /var/www/html
     user: "www-data"                    # avoid root-owned files
     environment:
-      WORDPRESS_DB_HOST: ${MYSQL_HOST}
+      WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
@@ -104,16 +104,6 @@ services:
       - ./wordpress:/var/www/html
       - ./wp-config.php:/var/www/html/wp-config.php:ro   # <— Custom wp-config.php
     entrypoint: ["wp"]                  # so ⁠ docker compose run wpcli <cmd> ⁠ runs ⁠ wp <cmd> ⁠
-
-  # Install composer
-  composer:
-    image: composer:2
-    container_name: ${COMPOSER_CONTAINER:-composer}
-    working_dir: /app
-    volumes:
-      - ./wordpress:/app
-    profiles:
-      - tools
 
 volumes:
   sage_node_modules: ## Required by Sage. Separate persistent volume for node_modules to avoid conflicts with host OS and ensure consistent dependencies across environments
