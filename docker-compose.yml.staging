@@ -114,6 +114,8 @@ services:
       - ./wordpress:/app
     profiles:
       - tools
+    environment:
+      COMPOSER_IGNORE_PLATFORM_REQS: 1
 
 volumes:
   sage_node_modules: ## Required by Sage. Separate persistent volume for node_modules to avoid conflicts with host OS and ensure consistent dependencies across environments
