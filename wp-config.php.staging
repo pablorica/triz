@@ -31,7 +31,7 @@ if (getenv('APP_ENV') === 'local') {
 
 define('WP_HOME',    $wphome);
 define('WP_SITEURL', $wphome);
-define('FORCE_SSL_ADMIN', true);
+//define('FORCE_SSL_ADMIN', true);
 
 
 // Salts — copy the ones from your current file, or generate new and paste here:
