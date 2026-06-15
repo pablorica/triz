@@ -29,7 +29,8 @@ services:
     # image: mysql:latest -> do not use latest to avoid unexpected breaking changes, pin to a specific version
     image: mysql:8.0.36
     container_name: ${MYSQL_CONTAINER}
-    command: --default-authentication-plugin=mysql_native_password
+    # Disable SSL on the server side (avoid ERROR 2026 (HY000): TLS/SSL error)
+    command: --default-authentication-plugin=mysql_native_password --ssl=0
     restart: unless-stopped
     volumes: ## Important to make the database persistent and avoid data loss on container restart. Also allows pre-seeding with an existing database if needed.
       - mysql_data:/var/lib/mysql
@@ -117,4 +118,4 @@ services:
 
 volumes:
   sage_node_modules: ## Required by Sage. Separate persistent volume for node_modules to avoid conflicts with host OS and ensure consistent dependencies across environments
-  mysql_data: ## Persistent storage for MySQL data to prevent data loss on container restart and allow pre-seeding with existing database if neededroot@consolidare-ubuntu:/srv/docker/triz# 
+  mysql_data: ## Persistent storage for MySQL data to prevent data loss on container restart and allow pre-seeding with existing database if needed
