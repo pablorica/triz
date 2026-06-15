@@ -8,11 +8,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.1.3] - 2026-06-15
+
+### Added
+
+- Header
+
+## [0.1.2] - 2026-06-15
+
+### Added
+
+- SAGE ACF Composer
+
 ## [0.1.1] - 2026-06-12
 
 ### Added
 
  - Font sizes
+ - PostCSS files
 
 ## [0.1.0] - 2026-06-11
 

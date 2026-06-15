@@ -13,12 +13,15 @@
     p-0 !p-0
     md:pt-0 !md:pt-0
     w-auto !w-auto
+    min-h-screen
     mb-0 !mb-0
     mb-auto !mb-auto
     mbe-auto !mbe-auto
     mt-auto !mt-auto
     items-start !items-start
+    items-center !items-center
     justify-start !justify-start
+    justify-center !justify-center
     lg:-ml-5 lg:-ml-5!
     lg:-mr-5 lg:-mr-5!
     md:-ml-5 md:-ml-5!

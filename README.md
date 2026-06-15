@@ -2,7 +2,7 @@
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.1.1-pink.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.1.3-pink.svg)](https://semver.org)
 
 
 ## Staging Server
@@ -552,11 +552,15 @@ The code above creates a **simple auto-registration system** using Vite's `impor
 resources/js/
   editor.js
   styles/
-    button-outline.js
+    hide-mobile.style.js
   variations/
-    button-arrow-down.js
+    arrow.down.variation.js
+    arrow.left.variation.js
+    arrow.up.variation.js
+    arrow.right.variation.js
+    button.inverse.variation.js
   filters/
-    example-filter.js
+    group.fullheight.variation.js
 ```
 
 Each module should export a default configuration object.
@@ -991,7 +995,7 @@ See the [ACF Composer installation](https://github.com/Log1x/acf-composer?tab=re
 #### Install via Composer:
 
 ```bash
-cd /wp_data/wp-content/themes/seadesign
+cd wordpress/wp-content/themes/codigo
 composer require log1x/acf-composer
 ```
 
