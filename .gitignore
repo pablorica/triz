@@ -192,9 +192,10 @@ wordpress/wp-content/themes/codigo/assets/css/*.map
 #wordpress/wp-content/themes/codigo/theme.json
 
 
-# Ignore everything in public
+# Track public
 !wordpress/wp-content/themes/codigo/public/
-#wordpress/wp-content/themes/codigo/public/*
-# But allow the Vite build output
+# Ignore everything inside public
+wordpress/wp-content/themes/codigo/public/*
+# But track the Vite build output
 !wordpress/wp-content/themes/codigo/public/build/
 !wordpress/wp-content/themes/codigo/public/build/**

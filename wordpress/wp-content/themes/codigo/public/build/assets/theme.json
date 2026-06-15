@@ -1,0 +1,214 @@
+{
+  "__processed__": "This file was generated using Vite",
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": {
+      "contentSize": "48rem"
+    },
+    "background": {
+      "backgroundImage": true
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "palette": [
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#000"
+        },
+        {
+          "name": "Dark Plum",
+          "slug": "darkplum",
+          "color": "#2E0019"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#fff"
+        }
+      ]
+    },
+    "custom": {
+      "spacing": {},
+      "typography": {
+        "font-size": {},
+        "line-height": {}
+      }
+    },
+    "spacing": {
+      "padding": true,
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "customFontSize": false,
+      "fontSizes": [
+        {
+          "name": "sm",
+          "slug": "sm",
+          "size": "var(--text-sm)"
+        },
+        {
+          "name": "base",
+          "slug": "base",
+          "size": "var(--text-base)"
+        },
+        {
+          "name": "2xl",
+          "slug": "2xl",
+          "size": "var(--text-2xl)"
+        },
+        {
+          "name": "5xl",
+          "slug": "5xl",
+          "size": "var(--text-5xl)"
+        },
+        {
+          "name": "7xl",
+          "slug": "7xl",
+          "size": "var(--text-7xl)"
+        },
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": ".75rem"
+        },
+        {
+          "name": "lg",
+          "slug": "lg",
+          "size": "1.125rem"
+        },
+        {
+          "name": "xl",
+          "slug": "xl",
+          "size": "1.25rem"
+        },
+        {
+          "name": "3xl",
+          "slug": "3xl",
+          "size": "1.875rem"
+        },
+        {
+          "name": "4xl",
+          "slug": "4xl",
+          "size": "2.25rem"
+        },
+        {
+          "name": "6xl",
+          "slug": "6xl",
+          "size": "3.75rem"
+        },
+        {
+          "name": "8xl",
+          "slug": "8xl",
+          "size": "6rem"
+        },
+        {
+          "name": "9xl",
+          "slug": "9xl",
+          "size": "8rem"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "name": "sans",
+          "slug": "sans",
+          "fontFamily": "Aeonik, sans-serif"
+        },
+        {
+          "name": "serif",
+          "slug": "serif",
+          "fontFamily": "ui-serif, Georgia, Cambria, Times New Roman, Times, serif"
+        },
+        {
+          "name": "mono",
+          "slug": "mono",
+          "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace"
+        }
+      ]
+    },
+    "border": {
+      "radius": true,
+      "radiusSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": ".125rem"
+        },
+        {
+          "name": "sm",
+          "slug": "sm",
+          "size": ".25rem"
+        },
+        {
+          "name": "md",
+          "slug": "md",
+          "size": ".375rem"
+        },
+        {
+          "name": "lg",
+          "slug": "lg",
+          "size": ".5rem"
+        },
+        {
+          "name": "xl",
+          "slug": "xl",
+          "size": ".75rem"
+        },
+        {
+          "name": "2xl",
+          "slug": "2xl",
+          "size": "1rem"
+        },
+        {
+          "name": "3xl",
+          "slug": "3xl",
+          "size": "1.5rem"
+        },
+        {
+          "name": "4xl",
+          "slug": "4xl",
+          "size": "2rem"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "color": {
+          "text": "var:preset|color|orange",
+          "background": "transparent"
+        },
+        "typography": {
+          "textDecoration": "underline"
+        },
+        "spacing": {
+          "padding": {
+            "top": "20px",
+            "right": "20px",
+            "bottom": "20px",
+            "left": "20px"
+          }
+        },
+        "border": {
+          "radius": "10px"
+        }
+      }
+    }
+  }
+}
