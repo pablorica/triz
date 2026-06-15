@@ -157,6 +157,9 @@ wordpress/wp-content/themes/*
 !safari-pinned-tab.svg
 !site.webmanifest
 
+# track staging files, if they exist
+!*.staging
+
 # Docker
 #!docker-compose.yml
 #!Caddyfile
