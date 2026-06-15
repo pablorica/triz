@@ -45,6 +45,7 @@ define('LOGGED_IN_SALT',   getenv('WORDPRESS_LOGGED_IN_SALT') ?:    '0abe866aa2c
 define('NONCE_SALT',       getenv('WORDPRESS_NONCE_SALT') ?:        'dd0a9f76143182f4042d37ce2cb2f617b3f122a5');
 
 
+
 //define('WP_ALLOW_REPAIR', true);
 
 // Debug flags (recommended for dev)
@@ -60,5 +61,7 @@ ini_set('error_log', dirname(__FILE__) . '/logs/error.log');
 
 // ABSPATH and bootstrap
 if (!defined('ABSPATH')) define('ABSPATH', __DIR__ . '/');
+// Avoid WP-CLI to request SSL on mysql queries
+define('MYSQL_CLIENT_FLAGS', 0);
 require_once ABSPATH . 'wp-settings.php';
 
