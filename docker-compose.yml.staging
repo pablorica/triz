@@ -104,6 +104,7 @@ services:
     volumes:
       - ./wordpress:/var/www/html
       - ./wp-config.php:/var/www/html/wp-config.php:ro   # <— Custom wp-config.php
+      - acorn_cache:/var/www/html/wp-content/cache  # <-- Required by SAGE
     entrypoint: ["wp"]                  # so ⁠ docker compose run wpcli <cmd> ⁠ runs ⁠ wp <cmd> ⁠
 
 # Install composer
