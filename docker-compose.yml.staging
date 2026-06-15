@@ -42,7 +42,6 @@ services:
       - ./wp-config.php:/var/www/html/wp-config.php:ro   # <— Custom wp-config.php
       - ./logs:/var/www/html/logs
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - acorn_cache:/var/www/html/wp-content/cache  # <-- Required by SAGE
     restart: unless-stopped
 
   phpmyadmin:
@@ -79,23 +78,8 @@ services:
     volumes:
       - ./wordpress:/var/www/html
       - ./wp-config.php:/var/www/html/wp-config.php:ro   # <— Custom wp-config.php
-      - acorn_cache:/var/www/html/wp-content/cache  # <-- Required by SAGE
     entrypoint: ["wp"]                  # so ⁠ docker compose run wpcli <cmd> ⁠ runs ⁠ wp <cmd> ⁠
-
-# Install composer
-  composer:
-    image: composer:2
-    container_name: ${COMPOSER_CONTAINER:-composer}
-    working_dir: /app
-    volumes:
-      - ./wordpress:/app
-      - acorn_cache:/app/wp-content/cache  # <-- Required by SAGE
-    profiles:
-      - tools
-    environment:
-      COMPOSER_IGNORE_PLATFORM_REQS: 1
 
 volumes:
   sage_node_modules: ## Required by Sage. Separate persistent volume for node_modules to avoid conflicts with host OS and ensure consistent dependencies across environments
   mysql_data: ## Persistent storage for MySQL data to prevent data loss on container restart and allow pre-seeding with existing database if needed
-  acorn_cache:  # SAGE cache
