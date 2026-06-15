@@ -1,3 +1,10 @@
+@php
+  $layoutContainer = function_exists('get_field')
+    ? (get_field('layout_container', 'option') ?: 'container-fluid')
+    : 'container-fluid';
+@endphp
+
+
 <!doctype html>
 <html @php(language_attributes())>
   <head>
@@ -13,13 +20,14 @@
     p-0 !p-0
     md:pt-0 !md:pt-0
     w-auto !w-auto
-    min-h-screen
+    min-h-screen !min-h-screen
     mb-0 !mb-0
     mb-auto !mb-auto
     mbe-auto !mbe-auto
     mt-auto !mt-auto
     items-start !items-start
     items-center !items-center
+    items-end !items-end
     justify-start !justify-start
     justify-center !justify-center
     lg:-ml-5 lg:-ml-5!
@@ -37,8 +45,11 @@
     mobile-only:hidden !mobile-only:hidden
 
     opacity-0 !opacity-0
+    leading-none !leading-none
 
     --}}
+
+
 
   <body @php(body_class())>
     @php(wp_body_open())
@@ -50,7 +61,7 @@
 
       @include('sections.header')
 
-      <main id="main" class="main">
+      <main id="main" class="main {{$layoutContainer}}">
         @yield('content')
       </main>
 

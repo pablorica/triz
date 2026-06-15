@@ -27,18 +27,23 @@
   /*
   Normalised to 1920px viewport
   Formula: font-size: (target_px / 1920) * 100vw;
+  sm: 16px → 0.8333vw
   base: 24px → 1.25vw
   h1: 72px → 3.75vw
   h2: 36px → 1.875vw
   7xl (large): 100px → 5.2083vw
 
-  192px → 10vw
-  128px → 6.6667vw
-  96px → 5vw
-  64px → 3.3333vw
-  48px → 2.5vw
-  16px → 0.8333vw
   */
+  --text-sm: clamp(0.75rem,0.8333vw,0.75rem);
+  /* (orig 0.75rem*24 = 18px)
+  Desktop: 0.8333vw (18px at 1920px)
+  Mobile: 18px → clamp(MIN, PREFERRED, MAX)
+    MIN → 0.75rem (18px) → smallest allowed size
+    PREFERRED → 0.8333vw → scales with viewport width
+    MAX → 0.75rem (18px) → largest allowed size
+  */
+
+
   --text-base: clamp(1rem,1.25vw,1rem);
   /*
   (orig 1rem*24 = 24px)
@@ -134,11 +139,11 @@
     @media (min-width: theme("screens.lg")) {
       --wp--style--global--content-size: 60vw !important;
       /* Original --wp--style--global--content-size: 1144px !important; */
+      --text-sm: 0.8333vw; /* 16px at 1920px */
       --text-base: 1.25vw; /* 24px at 1920px */
       --text-2xl: 1.875vw;  /* 36px at 1920px */
       --text-5xl: 3.75vw; /*  72px at 1920px  */
       --text-7xl: 5.2083vw; /*  100px at 1920px */
-
     }
   }
   html {
@@ -149,6 +154,7 @@
     /*font-family: var(--font-sans); */
     /* font-family: var(--font-serif); */
     /* font-family: var(--font-mono); */
+    scroll-behavior: smooth;
   }
   html, body {
     /* overflow-x: hidden; */
@@ -161,10 +167,6 @@
     margin-block-start: 0 !important;
     margin-block-end: 0 !important;
   }
-
-
-
-
   :root :where(.is-layout-flow) > p,
   :root :where(.is-layout-constrained) > p {
     margin-block-end: 1rem !important;
@@ -174,6 +176,22 @@
   :root :where(.is-layout-flow) > p:last-of-type,
   :root :where(.is-layout-constrained) > p:last-of-type {
     margin-block-end: 0 !important;
+  }
+
+  :root :where(.wp-block-columns.has-background) {
+    padding: 10px !important;
+    @media (min-width: theme("screens.lg")) {
+      padding: theme('spacing.5') !important;
+    }
+  }
+
+  :root :where(.wp-block-columns.is-layout-flex),
+  .grid {
+    gap: 0.5rem !important;
+  }
+
+  main#main.container-fluid {
+    --wp--style--global--content-size: 100vw !important;
   }
 
 }

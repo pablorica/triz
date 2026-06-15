@@ -102,19 +102,19 @@
         )
     </a>
     @if (has_nav_menu('primary_navigation'))
-        <nav class="nav-primary col-span-3 col-start-10
-            flex gap-0 items-center justify-center
-          "
-          aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-          {!! wp_nav_menu([
-              'theme_location' => 'primary_navigation',
-              'container' => false,
-              'menu_class' => 'text-white w-full
-                flex gap-2 md:gap-4 lg:gap-6 items-center justify-between',
-              'echo' => false
-            ]
-          ) !!}
-        </nav>
-      @endif
-    </div>
+      <nav class="nav-primary col-span-3 col-start-10
+          flex gap-0 items-center justify-center
+        "
+        aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+        {!! wp_nav_menu([
+            'theme_location' => 'primary_navigation',
+            'container' => false,
+            'menu_class' => 'text-white w-full
+              flex gap-2 md:gap-4 lg:gap-6 items-center justify-between',
+            'echo' => false
+          ]
+        ) !!}
+      </nav>
+    @endif
+  </div>
 </header>
