@@ -29,8 +29,7 @@ services:
     # image: mysql:latest -> do not use latest to avoid unexpected breaking changes, pin to a specific version
     image: mysql:8.0.36
     container_name: ${MYSQL_CONTAINER}
-    # Disable SSL on the server side (avoid ERROR 2026 (HY000): TLS/SSL error)
-    command: --default-authentication-plugin=mysql_native_password --skip-ssl
+    command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     volumes: ## Important to make the database persistent and avoid data loss on container restart. Also allows pre-seeding with an existing database if needed.
       - mysql_data:/var/lib/mysql
@@ -88,7 +87,7 @@ services:
 
   wpcli:
     # image: wordpress:cli  -> do not use latest to avoid unexpected breaking changes, pin to a specific version
-    image: wordpress:cli-php8.4
+    image: wordpress:cli-php8.3
     container_name: ${WPCLI_CONTAINER}
     depends_on: [mysql, wordpress]
     working_dir: /var/www/html
@@ -104,7 +103,7 @@ services:
     volumes:
       - ./wordpress:/var/www/html
       - ./wp-config.php:/var/www/html/wp-config.php:ro   # <— Custom wp-config.php
-    entrypoint: ["php", "-d", "mysqli.default_flags=0", "/usr/local/bin/wp"]
+    entrypoint: ["wp"]                  # so ⁠ docker compose run wpcli <cmd> ⁠ runs ⁠ wp <cmd> ⁠
 
   # Install composer
   composer:
