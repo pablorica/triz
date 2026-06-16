@@ -63,7 +63,7 @@
 
 /* Columns */
 /* Disable stacking between 782px and 960px */
-@media (min-width: 782px) and (max-width: 960px) {
+@media (min-width: theme('screens.md')) and (max-width: calc(theme('screens.lg') - 1px)) {
   .wp-block-columns {
     flex-wrap: wrap !important;
   }
@@ -76,12 +76,20 @@
 
 /* Spacer */
 .wp-block-spacer {
-  @media (max-width: 960px) {
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
     max-height: 30px;
   }
 }
 .wp-block-spacer:not(.is-style-mobile-show){
-  @media (max-width: 960px) {
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
     display:none;
+  }
+}
+
+/* Cover */
+.wp-block-cover,
+.wp-block-cover-image {
+  @media (max-width: calc(theme('screens.md') - 1px)) {
+    padding: 10px;
   }
 }

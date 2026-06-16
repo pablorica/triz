@@ -177,7 +177,7 @@
 
   :root :where(.wp-block-columns.has-background) {
     padding: 10px !important;
-    @media (min-width: theme("screens.lg")) {
+    @media (min-width: theme("screens.md")) {
       padding: theme('spacing.5') !important;
     }
   }
