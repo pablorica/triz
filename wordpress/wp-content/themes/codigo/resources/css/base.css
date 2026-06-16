@@ -54,7 +54,7 @@
     Maximum: 1.25rem = 30px
 
   */
-  --text-2xl: clamp(1.25rem,8vw,1.875rem);
+  --text-2xl: clamp(0.75rem,8vw,1.25rem);
   /*
   (orig 1.5rem*24 = 36px)
   Desktop: 1.875vw (36px at 1920px)

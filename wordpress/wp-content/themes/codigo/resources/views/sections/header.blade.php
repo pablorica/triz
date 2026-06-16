@@ -7,11 +7,8 @@
 
 @if(function_exists('get_field'))
   @php
-    $hideTitleGlobal   = get_field('layout_hide_title', 'option');
     $headerContainer = get_field('header_layout_container', 'option') ?: 'container-fluid';
-    $title = get_bloginfo('name', 'display');
-
-    $headerImageID = get_field('header_image', 'option');
+    $headerImageID   = get_field('header_image', 'option');
     //error_log('Header image: ' . $headerImageID );
     if($headerImageID) {
       $headerImage = wp_get_attachment_image(
@@ -34,22 +31,6 @@
     //Check if the current page is page or post
     if (is_page($currentPageId) || is_single($currentPageId)) {
 
-      $title = get_the_title($currentPageId);
-
-      if ($hideTitleGlobal) {
-        $hideTitle = true;
-      } else {
-        $hideTitle = false;
-      }
-
-      $hideTitleOverride = get_field('override_layout_hide_title', $currentPageId);
-      if ($hideTitleOverride) {
-        $hideTitle = true;
-        if ($hideTitleOverride === 'no') {
-          $hideTitle = false;
-        }
-      }
-
       $headerContainerOverride = get_field('override_header_layout_container', $currentPageId);
       if ($headerContainerOverride) {
         $headerContainer = $headerContainerOverride;
@@ -70,8 +51,6 @@
       }
     }
 
-    $title = '<h1 class="'.($hideTitle?'hidden':'').'">'.$title.'</h1>';
-
   @endphp
 @endif
 
@@ -90,7 +69,6 @@
   >
     <a class="brand block col-span-6 md:col-span-3"
       href="{!! home_url('/') !!}">
-      {!! $title !!}
         @include(
           'icons.logo',
           [

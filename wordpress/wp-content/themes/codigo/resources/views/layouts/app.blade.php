@@ -1,6 +1,9 @@
 @php
+  $currentId = get_the_ID();
   $layoutContainer = function_exists('get_field')
-    ? (get_field('layout_container', 'option') ?: 'container-fluid')
+    ? (get_field('override_layout_container', $currentId) ?: (
+        get_field('layout_container', 'option') ?: 'container-fluid'
+      ))
     : 'container-fluid';
 @endphp
 
