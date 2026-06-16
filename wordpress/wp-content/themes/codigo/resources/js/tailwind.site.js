@@ -48,10 +48,14 @@ export default {
           paddingLeft: '10px',
           paddingRight: '10px',
           maxWidth: '100%',
-          '@media (min-width: 768px)': {
+          '@media (min-width: 782px)': {
             paddingLeft: theme('spacing.5'),
             paddingRight: theme('spacing.5'),
-            maxWidth: '1144px',
+            //maxWidth: '1144px',
+            //maxWidth: '60vw',
+          },
+          '@media (min-width: 960px)': {
+            maxWidth: '60vw',
           },
         },
         '.container-fluid': {
@@ -61,7 +65,7 @@ export default {
           marginRight: 'auto',
           paddingLeft: '10px',
           paddingRight: '10px',
-          '@media (min-width: 768px)': {
+          '@media (min-width: 782px)': {
             paddingLeft: theme('spacing.5'),
             paddingRight: theme('spacing.5'),
           },

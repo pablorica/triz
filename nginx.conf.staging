@@ -1,5 +1,5 @@
 # Triz
-#
+# /etc/nginx/sites-available/triz.conf
 server {
   server_name triz.codigo.co.uk;
   client_max_body_size 256m;

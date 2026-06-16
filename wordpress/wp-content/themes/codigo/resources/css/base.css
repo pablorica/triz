@@ -34,52 +34,52 @@
   7xl (large): 100px → 5.2083vw
 
   */
-  --text-sm: clamp(0.75rem,0.8333vw,0.75rem);
+  --text-sm: clamp(0.75rem,0.8333vw,0.85rem);
   /* (orig 0.75rem*24 = 18px)
   Desktop: 0.8333vw (18px at 1920px)
-  Mobile: 18px → clamp(MIN, PREFERRED, MAX)
-    MIN → 0.75rem (18px) → smallest allowed size
-    PREFERRED → 0.8333vw → scales with viewport width
-    MAX → 0.75rem (18px) → largest allowed size
+  Mobile: ~18px → clamp(MIN, PREFERRED, MAX)
+    Minimum: 0.75rem = 18px
+    Preferred: 0.8333vw = 0.8333% of the viewport width
+    Maximum: 0.85rem = 20.4px
   */
 
 
-  --text-base: clamp(1rem,1.25vw,1rem);
+  --text-base: clamp(1rem,1.25vw,1.25rem);
   /*
   (orig 1rem*24 = 24px)
   Desktop: 1.25vw (24px at 1920px)
-  Mobile: 24px → clamp(MIN, PREFERRED, MAX)
-    MIN → 1rem (24px) → smallest allowed size
-    PREFERRED → 1.25vw → scales with viewport width
-    MAX → 1rem (24px) → largest allowed size
+  Mobile: ~24px → clamp(MIN, PREFERRED, MAX)
+    Minimum: 1rem = 24px
+    Preferred: 1.25vw = 1.25% of the viewport width
+    Maximum: 1.25rem = 30px
 
   */
-  --text-2xl: clamp(1.25rem,8vw,1.875rem)
+  --text-2xl: clamp(1.25rem,8vw,1.875rem);
   /*
   (orig 1.5rem*24 = 36px)
   Desktop: 1.875vw (36px at 1920px)
-  Mobile: 30px → clamp(MIN, PREFERRED, MAX)
-    MIN → 1.25rem (~30px) → smallest allowed size
-    PREFERRED → 6vw → scales with viewport width
-    MAX → 1.875rem (~36px) → largest allowed size
+  Mobile: ~35px → clamp(MIN, PREFERRED, MAX)
+    Minimum: 1.25rem = 30px
+    Preferred: 8vw = 8% of the viewport width
+    Maximum: 1.875rem = 45px
   */
-  --text-5xl: clamp(1.75rem,13vw,2.5rem);
+  --text-5xl: clamp(1.5rem,11vw,1.75rem);
   /*
   (orig 3rem*24 = 72px)
   Desktop: 72px at 1920px
-  Mobile: 60px-> clamp(MIN, PREFERRED, MAX)
-    MIN → 1.75rem (~42px) → smallest allowed size
-    PREFERRED → 13vw → scales with viewport width
-    MAX → 2.5rem (~60px) → largest allowed size
+  Mobile: ~40px-> clamp(MIN, PREFERRED, MAX)
+    Minimum: 1.5rem = 36px
+    Preferred: 11vw = 11% of the viewport width
+    Maximum: 1.75rem = 42px
   */
-  --text-7xl: clamp(3.75rem,15vw,4.5rem);
+  --text-7xl: clamp(3rem,13vw,3.5rem);
   /*
   (orig 4.5rem*24 = 108px)
   Desktop: 100px at 1920px (5.2083vw)
-  Mobile: 80px-> clamp(MIN, PREFERRED, MAX)
-    MIN → 3.75rem (~90px) → smallest allowed size
-    PREFERRED → 15vw → scales with viewport width
-    MAX → 4.5rem (~108px) → largest allowed size
+  Mobile: ~80px-> clamp(MIN, PREFERRED, MAX)
+    Minimum: 3rem = 72px
+    Preferred: 13vw = 13% of the viewport width
+    Maximum: 3.5rem = 84px
   */
 
   /* Letter Spacing */
@@ -101,12 +101,9 @@
   --text-base--line-height: 1.05; /* (original calc(1.5 / 1); */
   /*--text-lg--line-height: calc(1.75 / 1.125);
   --text-xl--line-height: calc(1.75 / 1.25); */
-
   /*--text-2xl--line-height: 1.05; /* (original calc(2 / 1.5); */
   /*--text-3xl--line-height: calc(2.25 / 1.875) */
   --text-4xl--line-height: 1.05; /* (original calc(2.5 / 2.25) */
-
-  --text-5lg--line-height: 1.05; /* custom */
   /*--text-5xl--line-height: 1 */
   --text-6xl--line-height: 1.05; /* (original 1) */
   --text-7xl--line-height: 1.05; /* (original 1) */

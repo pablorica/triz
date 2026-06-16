@@ -88,7 +88,7 @@
       left-2.5 right-2.5 md:left-5 md:right-5
       grid grid-cols-6 lg:grid-cols-12"
   >
-    <a class="brand block col-span-3"
+    <a class="brand block col-span-6 md:col-span-3"
       href="{!! home_url('/') !!}">
       {!! $title !!}
         @include(
@@ -102,7 +102,7 @@
         )
     </a>
     @if (has_nav_menu('primary_navigation'))
-      <nav class="nav-primary col-span-3 col-start-10
+      <nav class="nav-primary col-span-6 md:col-span-3 md:col-start-10
           flex gap-0 items-center justify-center
         "
         aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">

@@ -2,7 +2,7 @@
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.2.0-pink.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.2.1-pink.svg)](https://semver.org)
 
 
 ## Staging Server
@@ -105,6 +105,7 @@ docker compose run --rm node sh -lc "npm run build"
   - 50px → 2.6042vw
   - 7xl (large): 100px → 5.2083vw
   - 300px -> 15.625vw;
+  - 1144px → 59.7917vw;
 
 
 

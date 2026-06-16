@@ -10,10 +10,10 @@
     : 'container-fluid';
 @endphp
 <footer class="content-footer {{$layoutContainer}}">
-  <section class="content-footer-up grid grid-cols-6 lg:grid-cols-12
+  <section class="content-footer-up grid grid-cols-6 md:grid-cols-12
   py-[10px] md:pt-[108px] md:pb-5">
     @if (has_nav_menu('primary_navigation'))
-      <nav class="nav-primary col-span-2"
+      <nav class="nav-primary col-span-3 md:col-span-3 lg:col-span-2"
         aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
         {!! wp_nav_menu([
             'theme_location' => 'primary_navigation',
@@ -25,7 +25,7 @@
       </nav>
     @endif
     @if (has_nav_menu('footer_navigation'))
-      <nav class="nav-footer col-span-2 col-start-3"
+      <nav class="nav-footer col-span-3 md:col-span-3 lg:col-span-2"
         aria-label="{{ wp_get_nav_menu_name('footer_navigation') }}">
         {!! wp_nav_menu([
           'theme_location' => 'footer_navigation',
@@ -35,7 +35,7 @@
         ]) !!}
       </nav>
     @endif
-    <a class="brand block col-span-5 col-start-8"
+    <a class="brand block col-span-6 md:col-span-5 md:col-start-8"
         href="{!! home_url('/') !!}">
       @include(
         'icons.logo',
