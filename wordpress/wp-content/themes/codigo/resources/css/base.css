@@ -58,10 +58,10 @@
   /*
   (orig 1.5rem*24 = 36px)
   Desktop: 1.875vw (36px at 1920px)
-  Mobile: ~35px → clamp(MIN, PREFERRED, MAX)
-    Minimum: 1.25rem = 30px
+  Mobile: ~30px → clamp(MIN, PREFERRED, MAX)
+    Minimum: 0.75rem = 18px
     Preferred: 8vw = 8% of the viewport width
-    Maximum: 1.875rem = 45px
+    Maximum: 1.25rem = 30px
   */
   --text-5xl: clamp(1.5rem,11vw,1.75rem);
   /*

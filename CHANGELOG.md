@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.3.0] - 2026-06-17
+
+### Added
+
+- [Header | Dark layer over the image](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1215794859420141)
+
 ## [0.2.2] - 2026-06-16
 
 ### Added

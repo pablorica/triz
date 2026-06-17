@@ -142,7 +142,7 @@ class Options extends Field
         'required' => 0,
         'conditional_logic' => [],
         'wrapper' => [
-          'width' => '',
+          'width' => '50%',
           'class' => '',
           'id' => '',
         ],
@@ -155,13 +155,29 @@ class Options extends Field
         'layout' => 'horizontal',
         'return_format' => 'value',
       ])
+      ->addTrueFalse('layout_hide_title', [
+        'label' => 'Hide Title',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => [],
+        'wrapper' => [
+          'width' => '50%',
+          'class' => '',
+          'id' => '',
+        ],
+        'message' => '',
+        'default_value' => 0,
+        'ui' => 0,
+        'ui_on_text' => '',
+        'ui_off_text' => '',
+      ])
       ->addImage('header_image', [
         'label' => 'Header Image',
         'instructions' => '',
         'required' => 0,
         'conditional_logic' => [],
         'wrapper' => [
-          'width' => '',
+          'width' => '40%',
           'class' => '',
           'id' => '',
         ],
@@ -175,28 +191,43 @@ class Options extends Field
         'max_height' => '',
         'max_size' => '',
         'mime_types' => '',
+      ])
+      ->addColorPicker('header_overlay_colour', [
+        'label' => 'Header overlay colour',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => [],
+        'enable_opacity' => 0,
+        'return_format' => 'string',
+        'wrapper' => [
+          'width' => '30%',
+          'class' => '',
+          'id' => '',
+        ],
+        'default_value' => '',
+      ])
+      ->addRange('header_overlay_opacity', [
+        'label' => 'Overay opacity',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => [],
+        'wrapper' => [
+          'width' => '30%',
+          'class' => '',
+          'id' => '',
+        ],
+        'default_value' => '',
+        'min' => '0',
+        'max' => '1',
+        'step' => '0.01',
+        'prepend' => '',
+        'append' => '',
       ]);
 
     $options
       ->addPartial(ContainerButtons::class);
 
-    $options
-      ->addTrueFalse('layout_hide_title', [
-        'label' => 'Hide Title',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => [],
-        'wrapper' => [
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ],
-        'message' => '',
-        'default_value' => 0,
-        'ui' => 0,
-        'ui_on_text' => '',
-        'ui_off_text' => '',
-      ]);
+
 
 
     $options

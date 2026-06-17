@@ -7,8 +7,10 @@
 
 @if(function_exists('get_field'))
   @php
-    $headerContainer = get_field('header_layout_container', 'option') ?: 'container-fluid';
-    $headerImageID   = get_field('header_image', 'option');
+    $headerContainer      = get_field('header_layout_container', 'option') ?: 'container-fluid';
+    $headerImageID        = get_field('header_image', 'option');
+    $headerOverlayColour  = get_field('header_overlay_colour', 'option') ?: '#000';
+    $headerOverlayOpacity = get_field('header_overlay_opacity', 'option') ?: '0';
     //error_log('Header image: ' . $headerImageID );
     if($headerImageID) {
       $headerImage = wp_get_attachment_image(
@@ -21,6 +23,7 @@
         ]
       );
       //error_log('Header image: ' . print_r($headerImage,true) );
+
     } else {
       $headerImage = '';
     }
@@ -59,7 +62,13 @@
   {!! $headerContainer !!}"
 >
   @if($headerImage)
-    <div class="absolute inset-0 wp-block-cover__image-background">{!! $headerImage !!}</div>
+    <div class="absolute inset-0 wp-block-cover__image-background">
+      <div class="absolute inset-0 wp-block-cover__overlay"
+        style="background-color: {!! $headerOverlayColour !!};
+          opacity: {!! $headerOverlayOpacity !!};
+        "
+      ></div>
+    {!! $headerImage !!}</div>
   @endif
 
   <div class="site-header-content absolute
