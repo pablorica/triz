@@ -76,7 +76,7 @@
       left-2.5 right-2.5 md:left-5 md:right-5
       grid grid-cols-6 lg:grid-cols-12"
   >
-    <a class="brand block col-span-6 md:col-span-3"
+    <a class="brand block col-span-6 md:col-span-1"
       href="{!! home_url('/') !!}">
         @include(
           'icons.logo',

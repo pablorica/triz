@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.3.1] - 2026-06-17
+
+### Updated
+
+
+- [Header | Small logo](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1215794859420147)
+
+
 ## [0.3.0] - 2026-06-17
 
 ### Added
