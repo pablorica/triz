@@ -28,6 +28,9 @@
     mb-auto !mb-auto
     mbe-auto !mbe-auto
     mt-auto !mt-auto
+    mt-[-6.77vw] !mt-[-6.77vw]
+    mt-[-7.5vw] !mt-[-7.5vw]
+    lg:mt-[-7.5vw] lg:mt-[-7.5vw]!
     items-start !items-start
     items-center !items-center
     items-end !items-end

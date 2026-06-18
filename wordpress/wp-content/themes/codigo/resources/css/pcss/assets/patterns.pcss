@@ -61,6 +61,12 @@
   }
 }
 
+.is-style-mobile-only\:hidden{
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
+    display:none !important;
+  }
+}
+
 /* Columns */
 /* Disable stacking between 782px and 960px */
 @media (min-width: theme('screens.md')) and (max-width: calc(theme('screens.lg') - 1px)) {
@@ -73,18 +79,22 @@
   }
 }
 
+/* Grid Group */
+@media (max-width: calc(theme('screens.lg') - 1px)) {
+  .wp-block-group.is-layout-grid.stacked-on-mobile  {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
 
 /* Spacer */
 .wp-block-spacer {
   @media (max-width: calc(theme('screens.lg') - 1px)) {
-    max-height: 30px;
+    max-height: 1.5625vw !important; /*(30px)*/
   }
 }
-.wp-block-spacer:not(.is-style-mobile-show){
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
-    display:none;
-  }
-}
+
 
 /* Cover */
 .wp-block-cover,

@@ -191,6 +191,23 @@
     --wp--style--global--content-size: 100vw !important;
   }
 
+  .pr-1col {
+    padding-right: calc(8.34vw - 1rem) !important;
+  }
+  .lg\:pr-1col {
+    @media (min-width: theme("screens.lg")) {
+      padding-right: calc(8.34vw - 1rem) !important;
+    }
+  }
+  .pl-1col {
+    padding-left: calc(8.34vw - 1rem) !important;
+  }
+  .lg\:pl-1col {
+    @media (min-width: theme("screens.lg")) {
+      padding-left: calc(8.34vw - 1rem) !important;
+    }
+  }
+
 }
 
 
