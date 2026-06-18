@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.3.3] - 2026-06-18
+
+### Updated
+
+- [Footer Leading](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1215794859420155)
+
+
 ## [0.3.2] - 2026-06-18
 
 ### Updated
