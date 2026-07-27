@@ -90,7 +90,10 @@
 
 /* Spacer */
 .wp-block-spacer {
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
+  @media (max-width: calc(theme('screens.sm') - 1px)) {
+    max-height: 30px;
+  }
+  @media (min-width:theme('screens.sm')) and (max-width: calc(theme('screens.lg') - 1px)) {
     max-height: 1.5625vw !important; /*(30px)*/
   }
 }
