@@ -13,3 +13,5 @@
 /* PCSS files */
 /* Assets */
 @import "./pcss/assets/patterns.pcss";
+@import "./pcss/layout/footer.pcss";
+@import "./pcss/pages/home.pcss";
