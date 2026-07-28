@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.5.1] - 2026-07-28
+
+### Updated
+
+- [Services](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1216846847329163) - Add padding to the top and bottom of services section
+
+
+## [0.5.0] - 2026-07-28
+
+### Updated
+
+- Docker files
+
 ## [0.3.5] - 2026-07-27
 
 ### Updated

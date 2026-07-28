@@ -36,6 +36,8 @@
     items-end !items-end
     justify-start !justify-start
     justify-center !justify-center
+    lg:max-w-[45%] lg:max-w-[45%]!
+    lg:ml-0 lg:ml-0!
     lg:-ml-5 lg:-ml-5!
     lg:-mr-5 lg:-mr-5!
     md:-ml-5 md:-ml-5!
