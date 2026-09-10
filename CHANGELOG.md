@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.5.2] - 2026-09-10
+
+### Updated
+
+- [Triz - Mobile view](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1218352143787204)
+
+
 ## [0.5.1] - 2026-07-28
 
 ### Updated
