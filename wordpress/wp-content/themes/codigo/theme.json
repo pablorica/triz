@@ -39,6 +39,11 @@
       "customFontSize": false,
       "fontSizes": [
         {
+          "name": "xs",
+          "slug": "xs",
+          "size": "var(--text-xs)"
+        },
+        {
           "name": "sm",
           "slug": "sm",
           "size": "var(--text-sm)"

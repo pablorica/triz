@@ -34,6 +34,8 @@
   7xl (large): 100px → 5.2083vw
 
   */
+  --text-xs: clamp(0.5rem,0.625vw,0.65rem);
+
   --text-sm: clamp(0.75rem,0.8333vw,0.85rem);
   /* (orig 0.75rem*24 = 18px)
   Desktop: 0.8333vw (18px at 1920px)

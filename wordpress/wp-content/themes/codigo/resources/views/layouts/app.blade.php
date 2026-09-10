@@ -49,6 +49,7 @@
     mobile-only:h-full !mobile-only:h-full
     mobile-only:h-[calc(100dvh-60px)] !mobile-only:h-[calc(100dvh-60px)]
     mobile-only:hidden !mobile-only:hidden
+    mobile-only:block !mobile-only:block
 
     opacity-0 !opacity-0
     leading-none !leading-none

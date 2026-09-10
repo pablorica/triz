@@ -58,6 +58,11 @@
       "customFontSize": false,
       "fontSizes": [
         {
+          "name": "xs",
+          "slug": "xs",
+          "size": "var(--text-xs)"
+        },
+        {
           "name": "sm",
           "slug": "sm",
           "size": "var(--text-sm)"
@@ -81,11 +86,6 @@
           "name": "7xl",
           "slug": "7xl",
           "size": "var(--text-7xl)"
-        },
-        {
-          "name": "xs",
-          "slug": "xs",
-          "size": ".75rem"
         },
         {
           "name": "lg",
