@@ -98,6 +98,7 @@ docker compose run --rm node sh -lc "npm run build"
 
 - Normalised to 1920px viewport
 - Formula: font-size: (target_px / 1920) * 100vw;
+  - xs: 12px → 0.625vw
   - sm: 16px → 0.8333vw
   - base: 24px → 1.25vw
   - 30px → 1.5625vw
