@@ -1,5 +1,30 @@
 # docker-compose.yml
 services:
+  node:
+    image: node:20-alpine
+    working_dir: /workspace/wp-content/themes/${SAGE_THEMENAME}
+    volumes:
+      - ./wordpress:/workspace
+      - sage_node_modules:/workspace/wp-content/themes/${SAGE_THEMENAME}/node_modules ## Required by SAGE
+    environment:
+      APP_URL: ${SAGE_APPURL} ## Required by SAGE
+      APP_HOST: ${SAGE_APPHOST} ## Required by SAGE
+      VITE_BASE: /wp-content/themes/${SAGE_THEMENAME}/public/build/ ## Required by SAGE
+      VITE_SERVERPORT: ${NODE_PORT} ## Required by SAGE
+      VITE_CLIENTPORT: ${WORDPRESS_SSL_PORT} ## Required by SAGE
+    ports:
+      - "${NODE_PORT}:${NODE_PORT}"
+    command: >
+      sh -lc "
+        if [ ! -f node_modules/.package-lock.json ] || ! cmp -s package-lock.json node_modules/.package-lock.json; then
+          npm ci
+          # marker so we can detect installed state in this volume
+          cp package-lock.json node_modules/.package-lock.json 2>/dev/null || true
+        fi
+
+        # Start Vite in background
+        npm run dev -- --host 0.0.0.0
+      "
   mysql:
     # image: mysql:latest -> do not use latest to avoid unexpected breaking changes, pin to a specific version
     image: mysql:8.0.36
@@ -26,8 +51,9 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    ports:
-      - "${WORDPRESS_SSL_PORT}:80"
+    # Ports are managed by Caddy
+    # ports:
+    #  - "${WORDPRESS_SSL_PORT}:80"
     environment:
       WORDPRESS_DB_HOST: ${MYSQL_HOST}
       WORDPRESS_DB_USER: ${MYSQL_USER}
@@ -50,19 +76,18 @@ services:
     container_name: ${PHPMYADMIN_CONTAINER}
     depends_on:
       - mysql
-    # optional: expose only to NGINX on another local port
-    ports:
-      - "127.0.0.1:${PHPMYADMIN_PORT}:80"
+    # Ports are managed by Caddy
+    # ports:
+    #   - "${WORDPRESS_SSL_PORT}:80"
     environment:
       PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      PMA_ABSOLUTE_URI: ${WORDPRESS_HOME}/pma/
     restart: unless-stopped
 
   wpcli:
     # image: wordpress:cli  -> do not use latest to avoid unexpected breaking changes, pin to a specific version
-    image: wordpress:cli-php8.3
+    image: wordpress:cli-php8.4
     container_name: ${WPCLI_CONTAINER}
     depends_on: [mysql, wordpress]
     working_dir: /var/www/html
@@ -75,10 +100,28 @@ services:
       WORDPRESS_HOME: ${WORDPRESS_HOME}
       WORDPRESS_SSL_PORT: ${WORDPRESS_SSL_PORT}
       WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
+      ## WP_HOME: ${WORDPRESS_HOME}:${WORDPRESS_SSL_PORT}
+      ## WP_SITEURL: ${WORDPRESS_HOME}:${WORDPRESS_SSL_PORT}
     volumes:
       - ./wordpress:/var/www/html
       - ./wp-config.php:/var/www/html/wp-config.php:ro   # <— Custom wp-config.php
     entrypoint: ["wp"]                  # so ⁠ docker compose run wpcli <cmd> ⁠ runs ⁠ wp <cmd> ⁠
+  
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - wordpress
+      - phpmyadmin
+    ports:
+      # - "80:80"
+      # - "443:443"
+      # - "${WORDPRESS_PORT}:${WORDPRESS_PORT}"   # optional HTTP listener for redirect
+      - "${WORDPRESS_SSL_PORT}:${WORDPRESS_SSL_PORT}"   # HTTPS on custom port
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./certs:/etc/caddy/certs:ro
+
 
 volumes:
   sage_node_modules: ## Required by Sage. Separate persistent volume for node_modules to avoid conflicts with host OS and ensure consistent dependencies across environments
