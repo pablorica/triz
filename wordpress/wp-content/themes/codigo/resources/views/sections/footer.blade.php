@@ -35,7 +35,8 @@
         ]) !!}
       </nav>
     @endif
-    <a class="brand block col-span-6 md:col-span-5 md:col-start-8"
+    <a class="brand block col-span-6 md:col-span-5 md:col-start-8
+    pt-[25.26%] md:pt-0"
         href="{!! home_url('/') !!}">
       @include(
         'icons.logo',
