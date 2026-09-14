@@ -2,7 +2,7 @@
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.5.3-blue.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.5.4-blue.svg)](https://semver.org)
 
 
 ## Staging Server
