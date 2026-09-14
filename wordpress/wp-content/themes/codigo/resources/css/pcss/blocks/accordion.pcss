@@ -23,6 +23,9 @@
       @media  (min-width: 401px) and (max-width: calc(theme("screens.lg") - 1px)) {
         padding-right: 30vw;
       }
+      @media  (min-width: theme("screens.lg")) {
+        padding-right: 5vw;
+      }
     }
     &:hover .wp-block-accordion-heading__toggle-title {
       text-decoration: none;
@@ -32,10 +35,11 @@
       /* Hide the literal "+" from the block markup, draw our own glyph instead */
       font-size: 0;        /* hides the "+" text node */
       line-height: 0;
-      width: 20px;
+      width: 30px;
       &::before {
         content: "+";
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
+        font-size: var(--text-3xl);
         line-height: 1;
         display: inline-block;
       }

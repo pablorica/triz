@@ -72,7 +72,7 @@
   where the text crosses between min and max.
   */
 
-  --text-3xl: clamp(1.667rem, 4vw, 2.083rem);
+  /*--text-3xl: clamp(1.667rem, 4vw, 2.083rem);
   /*
     NOTE: px values below assume a 24px root (1rem = 24px), matching --text-2xl.
 
@@ -85,6 +85,13 @@
     40px floor, desktops at the 50px cap, tablets interpolate between.
     The single vw value can't pin both ends independently; it just sets
     where the text crosses between min and max.
+  */
+  --text-3xl: max(1.667rem, 1.565rem + 0.647vw);
+  /*
+    24px root. 40px floor, then a single linear slope with NO ceiling:
+      40px @ 375px  →  50px @ 1920px  →  keeps growing (≈54px @ 2560px)
+    Slope 0.647vw = 10px / (1920−375). Intercept 1.565rem (37.57px)
+    pins the low end. max() holds the 40px floor below 375px.
   */
   --text-5xl: clamp(1.5rem,11vw,1.75rem);
   /*
