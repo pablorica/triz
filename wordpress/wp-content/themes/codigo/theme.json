@@ -59,6 +59,11 @@
           "size": "var(--text-2xl)"
         },
         {
+          "name": "3xl",
+          "slug": "3xl",
+          "size": "var(--text-3xl)"
+        },
+        {
           "name": "5xl",
           "slug": "5xl",
           "size": "var(--text-5xl)"

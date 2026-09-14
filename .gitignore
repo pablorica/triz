@@ -132,16 +132,15 @@ wordpress/wp-content/themes/*
 !.gitignore
 !.editorconfig
 !.phpcs.xml.dist
-!README.md
-!CHANGELOG.md
-!DOCKER.md
-!SERVER.md
-!SASS.md
-!VUE.md
 !composer.json
 !theme.json
 # Migration file
 !*.sql.gz
+
+# track documentation
+!README.md
+!CHANGELOG.md
+!docs/
 
 # track example files, if they exist
 !*.example

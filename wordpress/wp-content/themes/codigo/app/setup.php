@@ -162,3 +162,30 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+
+/**
+ * Fix: Firefox "bare specifier @wordpress/interactivity was not remapped" error.
+ *
+ * The core Accordion block (and other Interactivity API blocks) ship an ES module
+ * that does `import ... from "@wordpress/interactivity"`. That bare specifier only
+ * resolves because WordPress prints a <script type="importmap"> that remaps it.
+ *
+ * WordPress normally prints that import map on `wp_head` at the default priority,
+ * which can land *after* scripts enqueued by plugins/the theme. Firefox enforces
+ * the strict single-import-map rule and rejects any import map registered once the
+ * module loader has already started — so the specifier fails to resolve and the
+ * block silently dies. Chrome allows late/multiple import maps, which is why it
+ * works there and only breaks in Firefox.
+ *
+ * Reprinting the import map on `wp_print_scripts` at priority 0 emits it before the
+ * enqueued scripts, so it's registered before any module starts loading. This can
+ * leave two <script type="importmap"> tags in the markup, which is harmless: the
+ * early valid one wins.
+ */
+add_action('wp_print_scripts', function () {
+  // Guard in case the Script Modules API isn't available (older WP / edge cases).
+  if (function_exists('wp_script_modules')) {
+    wp_script_modules()->print_import_map();
+  }
+}, 0);

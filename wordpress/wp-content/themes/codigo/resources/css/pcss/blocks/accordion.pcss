@@ -1,0 +1,54 @@
+
+
+.wp-block-accordion {
+  .wp-block-accordion-item {
+    padding-bottom:4vw; /* ~76px */
+  }
+
+  /* .wp-block-accordion-heading {
+    padding-bottom: 0 !important;
+  } */
+
+  .wp-block-accordion-heading__toggle {
+    align-items: start;
+    padding-top: 0;
+    .wp-block-accordion-heading__toggle-title {
+      word-break: normal;      /* not break-all */
+      overflow-wrap: normal;   /* not break-word / anywhere */
+      hyphens: none;           /* in case auto-hyphenation is on */
+
+      @media  (max-width: 400px) {
+        padding-right: 10vw;
+      }
+      @media  (min-width: 401px) and (max-width: calc(theme("screens.lg") - 1px)) {
+        padding-right: 30vw;
+      }
+    }
+    &:hover .wp-block-accordion-heading__toggle-title {
+      text-decoration: none;
+    }
+    .wp-block-accordion-heading__toggle-icon {
+      align-items: start;
+      /* Hide the literal "+" from the block markup, draw our own glyph instead */
+      font-size: 0;        /* hides the "+" text node */
+      line-height: 0;
+      width: 20px;
+      &::before {
+        content: "+";
+        font-size: 1.5rem;
+        line-height: 1;
+        display: inline-block;
+      }
+    }
+
+  }
+
+  /* Kill the 45° rotation the block applies when open */
+  .wp-block-accordion-item.is-open > .wp-block-accordion-heading .wp-block-accordion-heading__toggle-icon {
+    transform: none;
+    /* Open item → show a minus */
+    &::before {
+      content: "\2212";    /* U+2212 MINUS SIGN — cleaner than a hyphen */
+    }
+  }
+}

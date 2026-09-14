@@ -58,12 +58,33 @@
   */
   --text-2xl: clamp(0.75rem,8vw,1.25rem);
   /*
-  (orig 1.5rem*24 = 36px)
-  Desktop: 1.875vw (36px at 1920px)
-  Mobile: ~30px → clamp(MIN, PREFERRED, MAX)
-    Minimum: 0.75rem = 18px
-    Preferred: 8vw = 8% of the viewport width
-    Maximum: 1.25rem = 30px
+   NOTE: px values below assume a 24px root (1rem = 24px).
+  On a standard 16px root these become 12px / 16vw-equiv / 20px instead.
+
+  Min:  0.75rem  = 18px  (floor on very narrow screens)
+  Pref: 8vw      = 8% of viewport width
+  Max:  1.25rem  = 30px  (cap)
+
+  Behaviour: 8vw is steep, so it hits the 30px cap at any viewport
+  ≥ 375px — i.e. pinned to 30px on essentially every real screen.
+  It only scales down (toward 18px) between ~225px and 375px wide.
+  The single vw value can't pin both ends independently; it just sets
+  where the text crosses between min and max.
+  */
+
+  --text-3xl: clamp(1.667rem, 4vw, 2.083rem);
+  /*
+    NOTE: px values below assume a 24px root (1rem = 24px), matching --text-2xl.
+
+    Min:  1.667rem  = 40px  (floor on narrow screens)
+    Pref: 4vw       = 4% of viewport width
+    Max:  2.083rem  = 50px  (cap)
+
+    Behaviour: 4vw is gentle, so the text actually scales — it crosses
+    40px → 50px across roughly 1000px–1250px wide. Phones sit at the
+    40px floor, desktops at the 50px cap, tablets interpolate between.
+    The single vw value can't pin both ends independently; it just sets
+    where the text crosses between min and max.
   */
   --text-5xl: clamp(1.5rem,11vw,1.75rem);
   /*
@@ -196,7 +217,13 @@
 
 
   main#main.container-fluid {
-    --wp--style--global--content-size: 100vw !important;
+    --wp--style--global--content-size: calc(100vw - 20px) !important;
+    @media (min-width: theme("screens.md")) {
+      --wp--style--global--content-size: calc(100vw - 2.5rem) !important;
+    }
+    @media (min-width: theme("screens.xl")) {
+      --wp--style--global--content-size: 100vw !important;
+    }
   }
 
   .pr-1col {
