@@ -222,6 +222,14 @@
     line-height: 1.4;
   }
 
+  a {
+    transition: color 0.3s ease, opacity 0.3s ease;
+    &:hover {
+      color: var(--wp--preset--color--darkplum) !important;
+      opacity:0.2;
+    }
+  }
+
 
   main#main.container-fluid {
     --wp--style--global--content-size: calc(100vw - 20px) !important;

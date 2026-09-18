@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.5.5] - 2026-09-18
+
+### Updated
+
+- [Accordion](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1218352143787185) Smooth transition
+
+
+- [Button Hover States](https://app.asana.com/1/1198727466849836/inbox/1198727466849840/item/1218594220807009/story/1218577970067523)
+
+- [Contact Mobile version](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1215794859420158)
+
+
+
 ## [0.5.4] - 2026-09-14
 
 ### Updated

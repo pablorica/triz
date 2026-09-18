@@ -1,6 +1,39 @@
 
 
 .wp-block-accordion {
+
+    /* --- Smooth open/close ------------------------------------------------ *
+   * The block hides the panel via the `hidden` attribute (display:none),
+   * which isn't animatable. Override it, keep the panel in the layout, and
+   * collapse it with max-height driven by `.is-open`. `visibility` keeps the
+   * collapsed content out of the a11y tree; its transition is delayed so the
+   * text doesn't disappear before the close finishes.
+   * ---------------------------------------------------------------------- */
+   .wp-block-accordion-panel {
+    display: block;              /* beats display:none from [hidden]        */
+    content-visibility: visible; /* beats hidden="until-found"              */
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;              /* avoid a sliver of padding when collapsed */
+    visibility: hidden;
+    transition:
+      max-height 0.4s ease,
+      visibility 0s linear 0.4s;
+  }
+
+  .wp-block-accordion-item.is-open > .wp-block-accordion-panel {
+    max-height: 40rem;           /* ⬅ set just above your tallest panel     */
+    visibility: visible;
+    transition:
+      max-height 0.4s ease,
+      visibility 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wp-block-accordion-panel { transition: none; }
+  }
+
+
   .wp-block-accordion-item {
     padding-bottom:4vw; /* ~76px */
   }
@@ -16,6 +49,7 @@
       word-break: normal;      /* not break-all */
       overflow-wrap: normal;   /* not break-word / anywhere */
       hyphens: none;           /* in case auto-hyphenation is on */
+      transition: color 0.3s ease, opacity 0.3s ease;
 
       @media  (max-width: 400px) {
         padding-right: 10vw;
@@ -26,9 +60,6 @@
       @media  (min-width: theme("screens.lg")) {
         padding-right: 5vw;
       }
-    }
-    &:hover .wp-block-accordion-heading__toggle-title {
-      text-decoration: none;
     }
     .wp-block-accordion-heading__toggle-icon {
       align-items: start;
@@ -43,6 +74,11 @@
         line-height: 1;
         display: inline-block;
       }
+    }
+    &:hover .wp-block-accordion-heading__toggle-title,
+    &:hover .wp-block-accordion-heading__toggle-icon {
+      text-decoration: none;
+      opacity:0.8;
     }
 
   }
