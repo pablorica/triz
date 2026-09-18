@@ -223,10 +223,14 @@
   }
 
   a {
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: all 0.3s ease;
     &:hover {
-      color: var(--wp--preset--color--darkplum) !important;
-      opacity:0.2;
+      opacity:0.8;
+    }
+    &.no-hover {
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

@@ -1,6 +1,11 @@
 footer.content-footer {
   a:hover {
-    opacity:0.8;
+    opacity:0.6;
+    &.no-hover {
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
   @media  (max-width: calc(theme("screens.sm") - 1px)) {
     .brand {

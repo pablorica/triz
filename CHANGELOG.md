@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.5.6] - 2026-09-18
+
+### Updated
+
+. [Triz - Services Section](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1218352143787185) Block height
+
+- [Button Hover States](https://app.asana.com/1/1198727466849836/inbox/1198727466849840/item/1218594220807009/story/1218577970067523) Hover effect
+
+
 ## [0.5.5] - 2026-09-18
 
 ### Updated
