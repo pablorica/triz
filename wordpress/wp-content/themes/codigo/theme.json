@@ -39,14 +39,14 @@
       "customFontSize": false,
       "fontSizes": [
         {
-          "name": "xs",
-          "slug": "xs",
-          "size": "var(--text-xs)"
-        },
-        {
           "name": "sm",
           "slug": "sm",
           "size": "var(--text-sm)"
+        },
+        {
+          "name": "base-sm",
+          "slug": "base-sm",
+          "size": "var(--text-base-sm)"
         },
         {
           "name": "base",
@@ -54,19 +54,9 @@
           "size": "var(--text-base)"
         },
         {
-          "name": "2xl",
-          "slug": "2xl",
-          "size": "var(--text-2xl)"
-        },
-        {
           "name": "3xl",
           "slug": "3xl",
           "size": "var(--text-3xl)"
-        },
-        {
-          "name": "5xl",
-          "slug": "5xl",
-          "size": "var(--text-5xl)"
         },
         {
           "name": "7xl",

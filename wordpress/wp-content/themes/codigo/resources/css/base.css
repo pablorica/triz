@@ -42,6 +42,16 @@
 
   Desktop: See below
   */
+  --text-base-sm: clamp(0.75rem, 4.975vw, 0.8333rem);
+  /*
+  Mobile: 20px  at 402px (4.975vw)
+  clamp(MIN, PREFERRED, MAX)
+    Minimum: 0.75rem = 18px at 402px
+    Preferred: 4.975vw ->  20px at 402px
+    Maximum: 0.8333rem = 20px
+
+  Desktop: See below
+  */
 
   --text-base: clamp(0.8333rem, 5.97vw, 1rem);
   /*
@@ -135,6 +145,14 @@
         Minimum: 0.5rem = 12x at 1920px
         Preferred: 0.8333vw ->  16px at 1920px
         Maximum: 0.8334rem = 20px
+      */
+      --text-base-sm: clamp(0.8333rem, 1.25vw, 1.5rem);
+      /*
+      Desktop: 24px (1rem) at 1920px (1.25vw)
+      clamp(MIN, PREFERRED, MAX)
+        Minimum: 0.8333rem = 20px at 1920px
+        Preferred: 1.25vw ->  24px at 1920px
+        Maximum: 1.5rem = 36px
       */
 
       --text-base: clamp(0.8333rem, 1.25vw, 1.5rem);

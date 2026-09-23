@@ -19,10 +19,16 @@ body.home {
       margin-left: -15px !important;
       width: 100%;
       min-width: calc(100vw - 10px);
+      padding: 140px 0;
     }
     @media (min-width: theme("screens.md")) {
       max-width: 40vw !important;
       gap: 10%;
+    }
+  }
+  #careers {
+    @media  (max-width: calc(theme("screens.sm") - 1px)) {
+      padding-right: 15vw;
     }
   }
   @media  (max-width: calc(theme("screens.lg") - 1px)) {

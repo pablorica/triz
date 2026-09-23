@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Updated
 
- - [September 2026 Feedback](https://app.asana.com/1/1198727466849836/project/1215042979527993/list/1215043005167911) Mobile
+ - [September 2026 Feedback](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1218734386187019) Mobile
 
 
 ## [0.6.3] - 2026-09-23
