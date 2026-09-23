@@ -19,10 +19,15 @@
     transition:
       max-height 0.4s ease,
       visibility 0s linear 0.4s;
+
+    @media (min-width: theme("screens.lg")) {
+      max-width: 33vw;
+      margin-left: 0;
+    }
   }
 
   .wp-block-accordion-item.is-open > .wp-block-accordion-panel {
-    max-height: 20rem;           /* ⬅ set just above your tallest panel     */
+    max-height: 15rem;           /* ⬅ set just above your tallest panel     */
     visibility: visible;
     transition:
       max-height 0.4s ease,

@@ -46,15 +46,15 @@
   */
 
 
-  --text-base: clamp(1rem,1.25vw,1.25rem);
+  --text-base: clamp(0.8333rem, 5.970vw, 1rem);
   /*
-  (orig 1rem*24 = 24px)
-  Desktop: 1.25vw (24px at 1920px)
-  Mobile: ~24px → clamp(MIN, PREFERRED, MAX)
-    Minimum: 1rem = 24px
-    Preferred: 1.25vw = 1.25% of the viewport width
-    Maximum: 1.25rem = 30px
+  Mobile: Form 20px to 24px  at 402px (5.970vw)
+  clamp(MIN, PREFERRED, MAX)
+    Minimum: 0.8333rem = 20px at 402px (83.333% of maximun size)
+    Preferred: 5.970vw ->  24px at 402px
+    Maximum: 1rem = 24px
 
+  Desktop: See below
   */
   --text-2xl: clamp(0.75rem,8vw,1.25rem);
   /*
@@ -86,30 +86,38 @@
     The single vw value can't pin both ends independently; it just sets
     where the text crosses between min and max.
   */
-  --text-3xl: max(1.667rem, 1.565rem + 0.647vw);
+
+  --text-3xl: clamp( 1.458rem, 10.448vw, 1.75rem);
   /*
-    24px root. 40px floor, then a single linear slope with NO ceiling:
-      40px @ 375px  →  50px @ 1920px  →  keeps growing (≈54px @ 2560px)
-    Slope 0.647vw = 10px / (1920−375). Intercept 1.565rem (37.57px)
-    pins the low end. max() holds the 40px floor below 375px.
+  Mobile: Form 35px to 42px  at 402px (10.448vw)
+  clamp(MIN, PREFERRED, MAX)
+    Minimum: 1.458rem = 35px at 402px (83.333% of maximun size)
+    Preferred: 10.448vw ->  42px at 402px
+    Maximum: 1.75rem = 42px
+
+  Desktop: See below
   */
+
+
   --text-5xl: clamp(1.5rem,11vw,1.75rem);
   /*
   (orig 3rem*24 = 72px)
   Desktop: 72px at 1920px
   Mobile: ~40px-> clamp(MIN, PREFERRED, MAX)
-    Minimum: 1.5rem = 36px
+    Minimum: 1.75rem = 36px
     Preferred: 11vw = 11% of the viewport width
     Maximum: 1.75rem = 42px
   */
-  --text-7xl: clamp(2rem,15vw,2.1rem);
+
+  --text-7xl: clamp(2.222rem, 15.920vw,2.6667rem );
   /*
-  (orig 4.5rem*24 = 108px)
-  Desktop: 100px at 1920px (5.2083vw)
-  Mobile: ~80px-> clamp(MIN, PREFERRED, MAX)
-    Minimum: 3rem = 72px
-    Preferred: 13vw = 13% of the viewport width
-    Maximum: 3.5rem = 84px
+  Mobile: Form 53px to 64px  at 402px (15.920vw)
+  clamp(MIN, PREFERRED, MAX)
+    Minimum: 1rem = 53px at 402px (83.333% of maximun size)
+    Preferred: 15.920vw ->  64px at 402px
+    Maximum: 2.6667rem = 64px
+
+  Desktop: See below
   */
 
   /* Letter Spacing */
@@ -167,10 +175,35 @@
       --wp--style--global--content-size: 60vw !important;
       /* Original --wp--style--global--content-size: 1144px !important; */
       --text-sm: 0.8333vw; /* 16px at 1920px */
-      --text-base: 1.25vw; /* 24px at 1920px */
       --text-2xl: 1.875vw;  /* 36px at 1920px */
       --text-5xl: 3.75vw; /*  72px at 1920px  */
-      --text-7xl: 4.783vw; /* 92px at 1920px Orig: 5.2083vw -> 100px at 1920px  */
+
+      --text-base: clamp(0.8333rem, 1.25vw, 1rem);
+      /*
+      Desktop: 24px at 1920px (1.25vw)
+      clamp(MIN, PREFERRED, MAX)
+        Minimum: 0.8333rem = 20px at 1920px
+        Preferred: 1.25vw ->  24px at 1920px
+        Maximum: 1rem = 24px
+      */
+      --text-3xl: clamp( 1rem, 2.6041vw, 2.0833rem);
+      /*
+        Desktop: 50px at 1920px (2.6041vw)
+        clamp(MIN, PREFERRED, MAX)
+          Minimum: 1rem = 24px
+          Preferred: 2.6041vw [smooth: calc(1.6617rem + 0.527vw)]
+          Maximum: 2.0833rem = 50px
+        */
+        --text-7xl: clamp(1rem, 5.2083vw,4.1667rem );
+        /*
+        Desktop: 100px at 1920px (5.2083vw)
+        clamp(MIN, PREFERRED, MAX)
+          Minimum: 1rem = 24px
+          Preferred: 5.2083vw [smooth: calc(2.2696rem + 2.3715vw)],
+          Maximum: 4.1667rem = 100px
+        */
+
+
     }
   }
   html {
@@ -277,6 +310,12 @@
   }
   .wp-block-cover.image-horizontally-flipped img.wp-block-cover__image-background {
     transform: scaleX(-1);
+  }
+
+  .wp-block-column.image-column {
+    @media (min-width: theme("screens.lg")) {
+      flex-basis: calc(50% - 5px) !important;
+    }
   }
 
 }

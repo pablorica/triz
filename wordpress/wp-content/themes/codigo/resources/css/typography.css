@@ -3,7 +3,7 @@
 body {
   @apply font-light; /* font-weight: 300; */
   @apply  tracking-wide; /* letter-spacing: 2% */
-  @apply text-base lg:text-[1.25vw]; /* 16px mobile, 24px at 1920 */
+  @apply text-base; /* 16px mobile, 24px at 1920 */
   /* Original text-base lg:text-2xl; /* 16px/1.05 24px/1.05 */
 }
 
