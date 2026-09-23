@@ -10,7 +10,7 @@ export default {
         ':root': {
           // Fluid typography from 1 rem to 1.2 rem with fallback to 26px.
           fontSize: '24px',
-          letterSpacing: '0',
+          letterSpacing: '-1%',
           lineHeight: '1', // calc(1.5 / 1),
           fontWeight: '300',
 
@@ -49,8 +49,8 @@ export default {
           paddingRight: '20px',
           maxWidth: '100%',
           '@media (min-width: 782px)': {
-            paddingLeft: theme('spacing.5'),
-            paddingRight: theme('spacing.5'),
+            paddingLeft: theme('spacing.4'),
+            paddingRight: theme('spacing.4'),
             //maxWidth: '1144px',
             //maxWidth: '60vw',
           },
@@ -66,8 +66,8 @@ export default {
           paddingLeft: '20px',
           paddingRight: '20px',
           '@media (min-width: 782px)': {
-            paddingLeft: theme('spacing.5'),
-            paddingRight: theme('spacing.5'),
+            paddingLeft: theme('spacing.4'),
+            paddingRight: theme('spacing.4'),
           },
         },
         '.outer-grid': {

@@ -56,36 +56,6 @@
 
   Desktop: See below
   */
-  --text-2xl: clamp(0.75rem,8vw,1.25rem);
-  /*
-   NOTE: px values below assume a 24px root (1rem = 24px).
-  On a standard 16px root these become 12px / 16vw-equiv / 20px instead.
-
-  Min:  0.75rem  = 18px  (floor on very narrow screens)
-  Pref: 8vw      = 8% of viewport width
-  Max:  1.25rem  = 30px  (cap)
-
-  Behaviour: 8vw is steep, so it hits the 30px cap at any viewport
-  ≥ 375px — i.e. pinned to 30px on essentially every real screen.
-  It only scales down (toward 18px) between ~225px and 375px wide.
-  The single vw value can't pin both ends independently; it just sets
-  where the text crosses between min and max.
-  */
-
-  /*--text-3xl: clamp(1.667rem, 4vw, 2.083rem);
-  /*
-    NOTE: px values below assume a 24px root (1rem = 24px), matching --text-2xl.
-
-    Min:  1.667rem  = 40px  (floor on narrow screens)
-    Pref: 4vw       = 4% of viewport width
-    Max:  2.083rem  = 50px  (cap)
-
-    Behaviour: 4vw is gentle, so the text actually scales — it crosses
-    40px → 50px across roughly 1000px–1250px wide. Phones sit at the
-    40px floor, desktops at the 50px cap, tablets interpolate between.
-    The single vw value can't pin both ends independently; it just sets
-    where the text crosses between min and max.
-  */
 
   --text-3xl: clamp( 1.458rem, 10.448vw, 1.75rem);
   /*
@@ -96,17 +66,6 @@
     Maximum: 1.75rem = 42px
 
   Desktop: See below
-  */
-
-
-  --text-5xl: clamp(1.5rem,11vw,1.75rem);
-  /*
-  (orig 3rem*24 = 72px)
-  Desktop: 72px at 1920px
-  Mobile: ~40px-> clamp(MIN, PREFERRED, MAX)
-    Minimum: 1.75rem = 36px
-    Preferred: 11vw = 11% of the viewport width
-    Maximum: 1.75rem = 42px
   */
 
   --text-7xl: clamp(2.222rem, 15.920vw,2.6667rem );
@@ -131,24 +90,14 @@
 
 
   /* Line Height */
-  --leading-tighter: 1.1; /* custom */
+  --leading-tighter: 0.9; /* custom */
   /*--leading-tight: 1.25 /* orig 1.25 */
 
-  --text-xs--line-height: 1.1; /* orig calc(1 / 0.75); */
+  --text-xs--line-height: 1; /* orig calc(1 / 0.75); */
   /*--text-sm--line-height: calc(1.25 / 0.875); */
   --text-base--line-height: 1; /* (original calc(1.5 / 1); */
-  /*--text-lg--line-height: calc(1.75 / 1.125);
-  --text-xl--line-height: calc(1.75 / 1.25); */
-  /*--text-2xl--line-height: 1.05; /* (original calc(2 / 1.5); */
-  /*--text-3xl--line-height: calc(2.25 / 1.875) */
-  --text-4xl--line-height: 1; /* (original calc(2.5 / 2.25) */
-  /*--text-5xl--line-height: 1 */
-  --text-6xl--line-height: 1; /* (original 1) */
-  --text-7xl--line-height: 1; /* (original 1) */
-  --text-8lg--line-height: 1; /* custom */
-  --text-8xl--line-height: 1; /* (original 1) */
-  --text-9xl--line-height: 1; /* (original 1) */
-  --text-10xl--line-height: 1;
+  --text-3xl--line-height: 1; /* calc(2.25 / 1.875)  */
+  /*--text-7xl--line-height: 1; /* (original 1) */
 
 
   /* Animation */
@@ -174,10 +123,8 @@
     @media (min-width: theme("screens.lg")) {
       --wp--style--global--content-size: 60vw !important;
       /* Original --wp--style--global--content-size: 1144px !important; */
-      --text-sm: 0.8333vw; /* 16px at 1920px */
-      --text-2xl: 1.875vw;  /* 36px at 1920px */
-      --text-5xl: 3.75vw; /*  72px at 1920px  */
 
+      --text-sm: 0.8333vw; /* 16px at 1920px */
       --text-base: clamp(0.8333rem, 1.25vw, 1rem);
       /*
       Desktop: 24px at 1920px (1.25vw)
@@ -202,8 +149,6 @@
           Preferred: 5.2083vw [smooth: calc(2.2696rem + 2.3715vw)],
           Maximum: 4.1667rem = 100px
         */
-
-
     }
   }
   html {
@@ -241,7 +186,7 @@
   :root :where(.wp-block-columns.has-background) {
     padding: 20px !important;
     @media (min-width: theme("screens.md")) {
-      padding: theme('spacing.5') !important;
+      padding: theme('spacing.4') !important;
     }
   }
 

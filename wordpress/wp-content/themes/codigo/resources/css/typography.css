@@ -2,7 +2,6 @@
 /* Body (base) */
 body {
   @apply font-light; /* font-weight: 300; */
-  @apply  tracking-wide; /* letter-spacing: 2% */
   @apply text-base; /* 16px mobile, 24px at 1920 */
   /* Original text-base lg:text-2xl; /* 16px/1.05 24px/1.05 */
 }
@@ -10,39 +9,33 @@ body {
 /* Heading 1 */
 h1, .h1 {
   @apply font-medium;
-  @apply tracking-normal; /* letter-spacing: 0% */
-  @apply text-5xl lg:leading-none;
+  @apply text-7xl;
 
   overflow-wrap: anywhere;
 }
 /* Heading 2 */
 h2, .h2 {
   @apply font-medium;
-  @apply tracking-normal;
-  @apply text-2xl;
+  @apply text-3xl;
 }
 /* Heading 3 */
 h3, .h3 {
   @apply font-medium;
-  @apply tracking-normal;
   @apply text-base;
 }
 /* Heading 4 */
 h4, .h4 {
   @apply font-medium; /* font-weight: 500; */
-  @apply tracking-normal; /* letter-spacing: 0% */
   @apply text-base;
 }
 /* Body Heading 1 */
 strong,  b {
   @apply font-medium; /* font-weight: 500; */
-  @apply tracking-normal lg:tracking-wide; /* letter-spacing: 0% 2% */
 }
 /* Body Copy 2 */
 .is-style-small,
 small, .small {
   @apply font-light; /* font-weight: 300; */
-  @apply tracking-wide lg:tracking-normal; /* letter-spacing: 2% 0% */
   @apply text-xs lg:text-[0.8333vw] lg:leading-[1.1]; /* 8px mobile, 16px at 1920 */
   /* original text-xs lg:text-base/tighter; /* 8px/1.1 16px/1.1 */
 }
