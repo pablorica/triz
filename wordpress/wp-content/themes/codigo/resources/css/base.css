@@ -216,6 +216,11 @@
   .grid {
     gap: 0.5rem !important;
   }
+  :root :where(.wp-block-columns.is-layout-flex.gap-0),
+  .grid.gap-0 {
+    gap: 0 !important;
+  }
+
 
 
   ol, ul {
