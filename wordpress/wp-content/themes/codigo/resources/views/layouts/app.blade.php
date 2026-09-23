@@ -23,11 +23,22 @@
     p-0 !p-0
     md:pt-0 !md:pt-0
     w-auto !w-auto
-    min-h-screen !min-h-screen
-    min-h-[75vh] !min-h-[75vh]
-    min-h-[60vh] !min-h-[60vh]
-    min-h-[50vh] !min-h-[50vh]
-    min-h-[33.333vh] !min-h-[33.333vh]
+    min-h-screen !min-h-screen md:min-h-screenmd:!min-h-screen
+    min-h-[75vh] !min-h-[75vh] md:min-h-[75vh] md:!min-h-[75vh]
+    min-h-[60vh] !min-h-[60vh] md:min-h-[60vh] md:!min-h-[60vh]
+    min-h-[50vh] !min-h-[50vh] md:min-h-[50vh] md:!min-h-[50vh]
+    min-h-[40vh] !min-h-[40vh] md:min-h-[40vh] md:!min-h-[40vh]
+    min-h-[33.333vh] !min-h-[33.333vh] md:min-h-[33.333vh] md:!min-h-[33.333vh]
+    min-h-[30vh] !min-h-[30vh] md:min-h-[30vh] md:!min-h-[30vh]
+
+    max-w-[50vw] !max-w-[50vw] md:max-w-[50vw] md:!max-w-[50vw]
+    max-w-[40vw] !max-w-[40vw] md:max-w-[40vw] md:!max-w-[40vw]
+
+    [&>p]:opacity-0
+    [&>p]:animate-appearsin
+    [&>p:nth-child(1)]:[animation-delay:0s]
+    [&>p:nth-child(2)]:[animation-delay:0.4s]
+    [&>p:nth-child(3)]:[animation-delay:0.8s]
 
     mb-0 !mb-0
     mb-auto !mb-auto
@@ -47,7 +58,7 @@
     lg:-mr-5 lg:-mr-5!
     md:-ml-5 md:-ml-5!
     md:-mr-5 md:-mr-5!
-    hidden  !hidden
+    hidden  !hidden md:hidden  md:!hidden
     md:block !md:block
     md:sticky !md:sticky
     gap-0 !gap-0
@@ -57,9 +68,14 @@
     mobile-only:h-[calc(100dvh-60px)] !mobile-only:h-[calc(100dvh-60px)]
     mobile-only:hidden !mobile-only:hidden
     mobile-only:block !mobile-only:block
+    mobile-only:order-first !mobile-only:order-first
 
     opacity-0 !opacity-0
     leading-none !leading-none
+
+    object-cover md:object-cover lg:object-cover
+    aspect-[5/4] md:aspect-[5/4] lg:aspect-[5/4]
+    aspect-[4/3] md:aspect-[4/3] lg:aspect-[4/3]
     --}}
 
 

@@ -4,7 +4,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CdcsFLkV.css",
+    "file": "assets/app-Dq4X62BR.css",
     "name": "app",
     "names": [
       "app.css"
@@ -19,7 +19,7 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-859Vj39z.css",
+    "file": "assets/editor-WXjhJ_jb.css",
     "name": "editor",
     "names": [
       "editor.css"
@@ -50,7 +50,7 @@
     "src": "resources/fonts/aeonik-light.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BvRk9kiK.js",
+    "file": "assets/app-BCrwa4Pn.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

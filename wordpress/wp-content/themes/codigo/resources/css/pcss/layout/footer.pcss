@@ -1,19 +1,25 @@
 footer.content-footer {
-  a:hover {
-    opacity:0.6;
+  a {
+    @media (hover: hover) {
+      &:hover {
+        opacity:0.6;
+      }
+    }
     &.no-hover {
       &:hover {
         opacity: 1;
       }
     }
   }
+
   @media  (max-width: calc(theme("screens.sm") - 1px)) {
     .brand {
       margin-top:0;
     }
     .copyright {
       & > .wp-block-column:first-of-type {
-        margin-top:30px;
+        /* margin-top:30px; */
+        margin-top:0;
       }
       .has-sm-font-size {
         font-size: var(--text-xs) !important;

@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.6.0] - 2026-09-23
+
+### Updated
+
+ - [September 2026 Updates](https://app.asana.com/1/1198727466849836/project/1215042979527993/list/1215043005167911)
+
+
 ## [0.5.6] - 2026-09-18
 
 ### Updated

@@ -1,0 +1,1 @@
+console.log(`domReady`);var e=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&(t.target.classList.add(`is-visible`),e.unobserve(t.target))})},{threshold:.2});document.querySelectorAll(`.staggered-fade`).forEach(t=>{e.observe(t)});

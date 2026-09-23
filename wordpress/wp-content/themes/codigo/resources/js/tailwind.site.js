@@ -45,8 +45,8 @@ export default {
         '.container': {
           marginLeft: 'auto',
           marginRight: 'auto',
-          paddingLeft: '10px',
-          paddingRight: '10px',
+          paddingLeft: '20px',
+          paddingRight: '20px',
           maxWidth: '100%',
           '@media (min-width: 782px)': {
             paddingLeft: theme('spacing.5'),
@@ -63,8 +63,8 @@ export default {
           maxWidth: '100%',
           marginLeft: 'auto',
           marginRight: 'auto',
-          paddingLeft: '10px',
-          paddingRight: '10px',
+          paddingLeft: '20px',
+          paddingRight: '20px',
           '@media (min-width: 782px)': {
             paddingLeft: theme('spacing.5'),
             paddingRight: theme('spacing.5'),

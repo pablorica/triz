@@ -227,9 +227,6 @@ class Options extends Field
     $options
       ->addPartial(ContainerButtons::class);
 
-
-
-
     $options
       ->addButtonGroup('footer_layout_container', [
         'label' => 'Footer Container',
@@ -237,7 +234,7 @@ class Options extends Field
         'required' => 0,
         'conditional_logic' => [],
         'wrapper' => [
-          'width' => '',
+          'width' => '25%',
           'class' => '',
           'id' => '',
         ],
@@ -249,7 +246,22 @@ class Options extends Field
         'default_value' => 'container',
         'layout' => 'horizontal',
         'return_format' => 'value',
-      ]);
+      ])
+      ->addTextarea('footer_address', [
+        'label' => 'Address',
+        'instructions' => '',
+        'required' => 0,
+        'wrapper' => [
+            'width' => '75%',
+            'class' => '',
+            'id' => '',
+        ],
+        'default_value' => '',
+        'placeholder' => '',
+        'maxlength' => '',
+        'rows' => '',
+        'new_lines' => 'br', // Possible values are 'wpautop', 'br', or ''.
+    ]);
 
     // $options
     //   ->addTab('home', [

@@ -75,12 +75,14 @@
         display: inline-block;
       }
     }
+
     &:hover .wp-block-accordion-heading__toggle-title,
     &:hover .wp-block-accordion-heading__toggle-icon {
       text-decoration: none;
-      opacity:0.6;
+      @media (hover: hover) {
+        opacity:0.6;
+      }
     }
-
   }
 
   /* Kill the 45° rotation the block applies when open */

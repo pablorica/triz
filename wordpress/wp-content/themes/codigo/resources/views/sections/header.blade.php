@@ -73,7 +73,7 @@
 
   <div class="site-header-content absolute
       top-1/2 transform -translate-y-1/2
-      left-2.5 right-2.5 md:left-5 md:right-5
+      left-[20px] right-[20px] md:left-5 md:right-5
       grid grid-cols-6 lg:grid-cols-12"
   >
     <a class="brand no-hover block col-span-6 md:col-span-2 md:-mr-4!"

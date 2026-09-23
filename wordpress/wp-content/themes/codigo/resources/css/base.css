@@ -206,7 +206,7 @@
   }
 
   :root :where(.wp-block-columns.has-background) {
-    padding: 10px !important;
+    padding: 20px !important;
     @media (min-width: theme("screens.md")) {
       padding: theme('spacing.5') !important;
     }
@@ -219,13 +219,15 @@
 
 
   ol, ul {
-    line-height: 1.4;
+    line-height: 1.1;
   }
 
   a {
     transition: all 0.3s ease;
-    &:hover {
-      opacity:0.8;
+    @media (hover: hover) {
+      &:hover {
+        opacity:0.8;
+      }
     }
     &.no-hover {
       &:hover {
@@ -236,7 +238,8 @@
 
 
   main#main.container-fluid {
-    --wp--style--global--content-size: calc(100vw - 20px) !important;
+    /*--wp--style--global--content-size: calc(100vw - 20px) !important;*/
+    --wp--style--global--content-size: calc(100vw - 40px) !important;
     @media (min-width: theme("screens.md")) {
       --wp--style--global--content-size: calc(100vw - 2.5rem) !important;
     }
@@ -260,6 +263,15 @@
     @media (min-width: theme("screens.lg")) {
       padding-left: calc(8.34vw - 1rem) !important;
     }
+  }
+
+  .wp-block-image.fixed-ratio img {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .wp-block-cover.image-horizontally-flipped img.wp-block-cover__image-background {
+    transform: scaleX(-1);
   }
 
 }
