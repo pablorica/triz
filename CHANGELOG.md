@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.6.1] - 2026-09-23
+
+### Updated
+
+ - [Make the accordion dropdown slightly slower similar to recoil](https://app.asana.com/1/1198727466849836/project/1215042979527993/task/1218734386186999)
+
 ## [0.6.0] - 2026-09-23
 
 ### Updated
