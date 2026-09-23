@@ -11,7 +11,7 @@ export default {
           // Fluid typography from 1 rem to 1.2 rem with fallback to 26px.
           fontSize: '24px',
           letterSpacing: '0',
-          lineHeight: '26px', // calc(1.5 / 1),
+          lineHeight: '1', // calc(1.5 / 1),
           fontWeight: '300',
 
           // Safari resize fix.
