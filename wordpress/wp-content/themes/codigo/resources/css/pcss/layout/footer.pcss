@@ -1,4 +1,8 @@
 footer.content-footer {
+  nav .menu-item {
+    @apply text-base-sm;
+  }
+
   a {
     @media (hover: hover) {
       &:hover {
@@ -12,6 +16,10 @@ footer.content-footer {
     }
   }
 
+  .address {
+    @apply text-base-sm;
+  }
+
   @media  (max-width: calc(theme("screens.sm") - 1px)) {
     .brand {
       margin-top:0;
@@ -20,9 +28,6 @@ footer.content-footer {
       & > .wp-block-column:first-of-type {
         /* margin-top:30px; */
         margin-top:0;
-      }
-      .has-sm-font-size {
-        font-size: var(--text-xs) !important;
       }
     }
   }

@@ -56,9 +56,10 @@ The theme is based in Sage 11, which is a powerful WordPress starter theme that 
 
 ### Sizes
 
-- Formula: font-size: (target_px / 1920) * 100vw;
+
 
 - Normalised to 402px viewport (mobile)
+- Formula: font-size: (target_px / 402) * 100vw;
   - sm:   12px → 0.625vw
   - base: 24px → 1.25vw
   - 3xl:  42px → 10.448vw
@@ -67,6 +68,7 @@ The theme is based in Sage 11, which is a powerful WordPress starter theme that 
   - h2:   3xl
 
 - Normalised to 1920px viewport (desktop)
+- Formula: font-size: (target_px / 1920) * 100vw;
   - sm:   16px → 0.8333vw
   - base: 24px → 1.25vw
   - 3xl:  50px → 2.6041vw

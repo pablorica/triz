@@ -31,9 +31,16 @@ body.home {
       padding-right: 15vw;
     }
   }
+  #contact {
+    min-height: 75vh;
+    @media (min-width: theme("screens.md")) {
+      min-height: 100vh;
+    }
+  }
+
   @media  (max-width: calc(theme("screens.lg") - 1px)) {
     #contact .wp-block-cover__image-background {
-      object-position: 60%;
+      object-position: 75%;
     }
     #contact .wp-block-cover__inner-container {
       align-self: stretch;

@@ -32,12 +32,12 @@
   Desktop: See below
   */
 
-  --text-sm: clamp(0.3334rem, 0.625vw, 0.5rem);
+  --text-sm: clamp(0.402rem, 2.985vw, 0.5rem);
   /*
   Mobile: 12px (0.5rem)  at 402px (0.625vw)
   clamp(MIN, PREFERRED, MAX)
-    Minimum: 0.3334rem = 8x at 402px
-    Preferred: 0.625vw ->  12px at 402px
+    Minimum: 0.402rem = 10x at 402px
+    Preferred: 2.985vw ->  12px at 402px
     Maximum: 0.5rem = 12px
 
   Desktop: See below
