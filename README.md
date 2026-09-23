@@ -2,7 +2,7 @@
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.6.3-blue.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.6.4-blue.svg)](https://semver.org)
 
 
 ## Staging Server
@@ -56,16 +56,23 @@ The theme is based in Sage 11, which is a powerful WordPress starter theme that 
 
 ### Sizes
 
-- Normalised to 1920px viewport
 - Formula: font-size: (target_px / 1920) * 100vw;
-  - xs: 12px → 0.625vw
-  - sm: 16px → 0.8333vw
+
+- Normalised to 402px viewport (mobile)
+  - sm:   12px → 0.625vw
   - base: 24px → 1.25vw
-  - 30px → 1.5625vw
-  - h1: 72px → 3.75vw
-  - h2: 36px → 1.875vw
-  - 50px → 2.6042vw
-  - 7xl (large): 100px → 5.2083vw
+  - 3xl:  42px → 10.448vw
+  - 7xl:  64px → 15.920vw 
+  - h1:   7xl
+  - h2:   3xl
+
+- Normalised to 1920px viewport (desktop)
+  - sm:   16px → 0.8333vw
+  - base: 24px → 1.25vw
+  - 3xl:  50px → 2.6041vw
+  - 7xl:  100px → 5.2083vw
+  - h1:   7xl
+  - h2:   3xl
   - 130px → 6.7708vw;
   - 200px → 10.4167vw;
   - 300px -> 15.625vw;

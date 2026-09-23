@@ -20,6 +20,7 @@
       max-height 0.4s ease,
       visibility 0s linear 0.4s;
 
+    max-width: 75vw;
     @media (min-width: theme("screens.lg")) {
       max-width: 32vw;
       margin-left: 0;
@@ -30,11 +31,14 @@
   }
 
   .wp-block-accordion-item.is-open > .wp-block-accordion-panel {
-    max-height: 15rem;           /* ⬅ set just above your tallest panel     */
+    max-height: 25rem;           /* ⬅ set just above your tallest panel     */
     visibility: visible;
     transition:
       max-height 0.4s ease,
       visibility 0s;
+    @media (min-width: theme("screens.lg")) {
+      max-height: 15rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -43,7 +47,10 @@
 
 
   .wp-block-accordion-item {
-    padding-bottom:4vw; /* ~76px */
+    padding-bottom:10vw;
+    @media (min-width: theme("screens.lg")) {
+      padding-bottom:4vw;
+    }
   }
 
   /* .wp-block-accordion-heading {
@@ -62,8 +69,11 @@
       @media  (max-width: 400px) {
         padding-right: 10vw;
       }
-      @media  (min-width: 401px) and (max-width: calc(theme("screens.lg") - 1px)) {
-        padding-right: 30vw;
+      @media  (min-width: 401px) and (max-width: calc(theme("screens.sm") - 1px)) {
+        padding-right: 7vw;
+      }
+      @media  (min-width: theme("screens.sm")) and (max-width: calc(theme("screens.lg") - 1px)) {
+        padding-right: 10vw;
       }
       @media  (min-width: theme("screens.lg")) {
         padding-right: 5vw;

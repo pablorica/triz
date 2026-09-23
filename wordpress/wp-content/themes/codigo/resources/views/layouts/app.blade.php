@@ -23,7 +23,7 @@
     p-0 !p-0
     md:pt-0 !md:pt-0
     w-auto !w-auto
-    min-h-screen !min-h-screen md:min-h-screenmd:!min-h-screen
+    min-h-screen !min-h-screen md:min-h-screen md:!min-h-screen
     min-h-[75vh] !min-h-[75vh] md:min-h-[75vh] md:!min-h-[75vh]
     min-h-[60vh] !min-h-[60vh] md:min-h-[60vh] md:!min-h-[60vh]
     min-h-[50vh] !min-h-[50vh] md:min-h-[50vh] md:!min-h-[50vh]

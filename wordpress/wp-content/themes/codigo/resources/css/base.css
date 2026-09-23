@@ -1,16 +1,12 @@
-
 @theme {
   /* Colours (must match with resources/js/acf-colors.js ) and settings.color.palette in theme.json */
-  --color-black:    #000;
-  --color-darkplum: #2E0019;
-  --color-white:    #fff;
-
-
+  --color-black: #000;
+  --color-darkplum: #2e0019;
+  --color-white: #fff;
 
   /* Fonts */
-  --font-sans: 'Aeonik', sans-serif;
+  --font-sans: "Aeonik", sans-serif;
   /* --font-serif: 'Neue Haas Grotesk Display Pro', serif; */
-
 
   --font-weight-*: initial;
   /* --font-weight-hairline: 100;
@@ -25,30 +21,31 @@
 
   /* Font Size */
   /*
-  Normalised to 1920px viewport
-  Formula: font-size: (target_px / 1920) * 100vw;
-  sm: 16px → 0.8333vw
-  base: 24px → 1.25vw
-  h1: 72px → 3.75vw
-  h2: 36px → 1.875vw
-  7xl (large): 100px → 5.2083vw
-
-  */
-  --text-xs: clamp(0.5rem,0.625vw,0.65rem);
-
-  --text-sm: clamp(0.75rem,0.8333vw,0.85rem);
-  /* (orig 0.75rem*24 = 18px)
-  Desktop: 0.8333vw (18px at 1920px)
-  Mobile: ~18px → clamp(MIN, PREFERRED, MAX)
-    Minimum: 0.75rem = 18px
-    Preferred: 0.8333vw = 0.8333% of the viewport width
-    Maximum: 0.85rem = 20.4px
+    Formula: font-size: (target_px / 1920) * 100vw;
+    Normalised to 402px viewport (mobile)
+    sm:   12px → 0.625vw
+    base: 24px → 1.25vw
+    3xl:  42px → 10.448vw
+    7xl:  64px → 15.920vw
+    h1:   7xl
+    h2:   3xl
+  Desktop: See below
   */
 
-
-  --text-base: clamp(0.8333rem, 5.970vw, 1rem);
+  --text-sm: clamp(0.3334rem, 0.625vw, 0.5rem);
   /*
-  Mobile: Form 20px to 24px  at 402px (5.970vw)
+  Mobile: 12px (0.5rem)  at 402px (0.625vw)
+  clamp(MIN, PREFERRED, MAX)
+    Minimum: 0.3334rem = 8x at 402px
+    Preferred: 0.625vw ->  12px at 402px
+    Maximum: 0.5rem = 12px
+
+  Desktop: See below
+  */
+
+  --text-base: clamp(0.8333rem, 5.97vw, 1rem);
+  /*
+  Mobile: 24px  at 402px (5.970vw)
   clamp(MIN, PREFERRED, MAX)
     Minimum: 0.8333rem = 20px at 402px (83.333% of maximun size)
     Preferred: 5.970vw ->  24px at 402px
@@ -57,9 +54,9 @@
   Desktop: See below
   */
 
-  --text-3xl: clamp( 1.458rem, 10.448vw, 1.75rem);
+  --text-3xl: clamp(1.458rem, 10.448vw, 1.75rem);
   /*
-  Mobile: Form 35px to 42px  at 402px (10.448vw)
+  Mobile: 42px  at 402px (10.448vw)
   clamp(MIN, PREFERRED, MAX)
     Minimum: 1.458rem = 35px at 402px (83.333% of maximun size)
     Preferred: 10.448vw ->  42px at 402px
@@ -68,7 +65,7 @@
   Desktop: See below
   */
 
-  --text-7xl: clamp(2.222rem, 15.920vw,2.6667rem );
+  --text-7xl: clamp(2.222rem, 15.92vw, 2.6667rem);
   /*
   Mobile: Form 53px to 64px  at 402px (15.920vw)
   clamp(MIN, PREFERRED, MAX)
@@ -84,10 +81,9 @@
   /*--tracking-tighter: -0.05em; /* -5%  */
   /*--tracking-tight:  -0.025em /* -2.5%  */
   /*--tracking-normal: 0  /* 0em */
-  --tracking-wide: 0.02em;  /*  orig 0.025em 2.5%  */
+  --tracking-wide: 0.02em; /*  orig 0.025em 2.5%  */
   /*--tracking-wider:  0.05em  /* 5%  */
   /*--tracking-widest: 0.1em /* 10%  */
-
 
   /* Line Height */
   --leading-tighter: 0.9; /* custom */
@@ -99,23 +95,20 @@
   --text-3xl--line-height: 1; /* calc(2.25 / 1.875)  */
   /*--text-7xl--line-height: 1; /* (original 1) */
 
-
   /* Animation */
   --animate-appearsin: appearsIn 1.2s ease forwards;
   --animate-appearsout: appearsOut 0.6s ease forwards;
 
   --default-transition-duration: 150ms; /*Original 150ms */
 
-
   /* Breakpoints. */
-  --breakpoint-sm: 600px;  /* Matches Gutenberg small */
-  --breakpoint-md: 782px;  /*  Matches Gutenberg medium */
-  --breakpoint-lg: 960px;  /*  Matches Gutenberg large */
+  --breakpoint-sm: 600px; /* Matches Gutenberg small */
+  --breakpoint-md: 782px; /*  Matches Gutenberg medium */
+  --breakpoint-lg: 960px; /*  Matches Gutenberg large */
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1792px;
 }
-
 
 @layer base {
   :root {
@@ -124,7 +117,26 @@
       --wp--style--global--content-size: 60vw !important;
       /* Original --wp--style--global--content-size: 1144px !important; */
 
-      --text-sm: 0.8333vw; /* 16px at 1920px */
+      /*
+        Formula: font-size: (target_px / 1920) * 100vw;
+        Normalised to 1920px viewport (desktop)
+        sm:   16px → 0.8333vw
+        base: 24px → 1.25vw
+        3xl:  50px → 2.6041vw
+        7xl:  100px → 5.2083vw
+        h1:   7xl
+        h2:   3xl
+      */
+
+      --text-sm: clamp(0.5rem, 0.8333vw, 0.8334rem);
+      /*
+      Desktop: 16px (0.667rem) at 1920px (0.8333vw)
+      clamp(MIN, PREFERRED, MAX)
+        Minimum: 0.5rem = 12x at 1920px
+        Preferred: 0.8333vw ->  16px at 1920px
+        Maximum: 0.8334rem = 20px
+      */
+
       --text-base: clamp(0.8333rem, 1.25vw, 1.5rem);
       /*
       Desktop: 24px (1rem) at 1920px (1.25vw)
@@ -133,7 +145,7 @@
         Preferred: 1.25vw ->  24px at 1920px
         Maximum: 1.5rem = 36px
       */
-      --text-3xl: clamp( 1rem, 2.6041vw, 3rem);
+      --text-3xl: clamp(1rem, 2.6041vw, 3rem);
       /*
         Desktop: 50px (2.0833rem)  at 1920px (2.6041vw)
         clamp(MIN, PREFERRED, MAX)
@@ -141,8 +153,8 @@
           Preferred: 2.6041vw [smooth: calc(1.6617rem + 0.527vw)]
           Maximum: 3rem = 72px
         */
-        --text-7xl: clamp(1rem, 5.2083vw,5rem );
-        /*
+      --text-7xl: clamp(1rem, 5.2083vw, 5rem);
+      /*
         Desktop: 100px (4.1667rem) at 1920px (5.2083vw)
         clamp(MIN, PREFERRED, MAX)
           Minimum: 1rem = 24px
@@ -161,7 +173,8 @@
     /* font-family: var(--font-mono); */
     scroll-behavior: smooth;
   }
-  html, body {
+  html,
+  body {
     /* overflow-x: hidden; */
     overflow-x: clip;
     /* scrollbar-gutter: stable; */
@@ -186,7 +199,7 @@
   :root :where(.wp-block-columns.has-background) {
     padding: 20px !important;
     @media (min-width: theme("screens.md")) {
-      padding: theme('spacing.4') !important;
+      padding: theme("spacing.4") !important;
     }
   }
 
@@ -199,9 +212,8 @@
     gap: 0 !important;
   }
 
-
-
-  ol, ul {
+  ol,
+  ul {
     line-height: 1.1;
   }
 
@@ -209,7 +221,7 @@
     transition: all 0.3s ease;
     @media (hover: hover) {
       &:hover {
-        opacity:0.8;
+        opacity: 0.8;
       }
     }
     &.no-hover {
@@ -218,7 +230,6 @@
       }
     }
   }
-
 
   main#main.container-fluid {
     /*--wp--style--global--content-size: calc(100vw - 20px) !important;*/
@@ -253,7 +264,8 @@
     width: 100%;
     object-fit: cover;
   }
-  .wp-block-cover.image-horizontally-flipped img.wp-block-cover__image-background {
+  .wp-block-cover.image-horizontally-flipped
+    img.wp-block-cover__image-background {
     transform: scaleX(-1);
   }
 
@@ -262,28 +274,31 @@
       flex-basis: calc(50% - 5px) !important;
     }
   }
-
+  .wp-block-column.panel {
+    max-width: 75vw;
+    @media (min-width: theme("screens.lg")) {
+      max-width: 32vw;
+    }
+  }
 }
-
 
 @keyframes appearsIn {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes appearsOut {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
 }
-

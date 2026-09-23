@@ -27,7 +27,7 @@
   @endphp
 @endif
 
-<div class="page-header my-5">
+<div class="page-header my-0">
   {!! $title !!}
 </div>
 <!-- End /codigo/resources/views/partials/page-header.blade.php -->
