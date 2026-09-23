@@ -203,7 +203,7 @@
     }
   }
 
-  :root :where(.wp-block-columns.is-layout-flex),
+  :root :where(.wp-block-columns.is-layout-flex):not(.disable-gap),
   .grid {
     gap: 0.5rem !important;
   }

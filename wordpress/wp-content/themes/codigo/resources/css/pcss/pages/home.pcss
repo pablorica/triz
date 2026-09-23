@@ -7,10 +7,22 @@ body.home {
       margin-bottom:30px;
     }
     #services h3 {
-      padding-bottom:10px;
+      padding-bottom:30px;
     }
     #services h3 br {
       display: none
+    }
+  }
+  #chambers-rankings {
+    @media  (max-width: calc(theme("screens.sm") - 1px)) {
+      gap: 0;
+      margin-left: -15px !important;
+      width: 100%;
+      min-width: calc(100vw - 10px);
+    }
+    @media (min-width: theme("screens.md")) {
+      max-width: 40vw !important;
+      gap: 10%;
     }
   }
   @media  (max-width: calc(theme("screens.lg") - 1px)) {

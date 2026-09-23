@@ -67,6 +67,8 @@
     overscroll-none !overscroll-none
 
     mobile-only:h-full !mobile-only:h-full
+    mobile-only:h-[40px] !mobile-only:h-[40px] mobile-only:h-[40px]!
+    mobile-only:max-h-[40px] !mobile-only:max-h-[40px] mobile-only:max-h-[40px]!
     mobile-only:h-[calc(100dvh-60px)] !mobile-only:h-[calc(100dvh-60px)]
     mobile-only:hidden !mobile-only:hidden
     mobile-only:block !mobile-only:block
