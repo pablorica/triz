@@ -125,29 +125,29 @@
       /* Original --wp--style--global--content-size: 1144px !important; */
 
       --text-sm: 0.8333vw; /* 16px at 1920px */
-      --text-base: clamp(0.8333rem, 1.25vw, 1rem);
+      --text-base: clamp(0.8333rem, 1.25vw, 1.5rem);
       /*
-      Desktop: 24px at 1920px (1.25vw)
+      Desktop: 24px (1rem) at 1920px (1.25vw)
       clamp(MIN, PREFERRED, MAX)
         Minimum: 0.8333rem = 20px at 1920px
         Preferred: 1.25vw ->  24px at 1920px
-        Maximum: 1rem = 24px
+        Maximum: 1.5rem = 36px
       */
-      --text-3xl: clamp( 1rem, 2.6041vw, 2.0833rem);
+      --text-3xl: clamp( 1rem, 2.6041vw, 3rem);
       /*
-        Desktop: 50px at 1920px (2.6041vw)
+        Desktop: 50px (2.0833rem)  at 1920px (2.6041vw)
         clamp(MIN, PREFERRED, MAX)
           Minimum: 1rem = 24px
           Preferred: 2.6041vw [smooth: calc(1.6617rem + 0.527vw)]
-          Maximum: 2.0833rem = 50px
+          Maximum: 3rem = 72px
         */
-        --text-7xl: clamp(1rem, 5.2083vw,4.1667rem );
+        --text-7xl: clamp(1rem, 5.2083vw,5rem );
         /*
-        Desktop: 100px at 1920px (5.2083vw)
+        Desktop: 100px (4.1667rem) at 1920px (5.2083vw)
         clamp(MIN, PREFERRED, MAX)
           Minimum: 1rem = 24px
           Preferred: 5.2083vw [smooth: calc(2.2696rem + 2.3715vw)],
-          Maximum: 4.1667rem = 100px
+          Maximum: 5rem = 120px
         */
     }
   }
