@@ -91,8 +91,8 @@ export default {
     plugin(function ({ addVariant }) {
       addVariant('mobile-only', "@media screen and (max-width: calc(theme('screens.sm') - 1px))");
       // instead of hard-coded 640px use sm breakpoint value from config. Or anything
-      addVariant('tablet-only', "@media screen and (min-width: theme('screens.sm')) and (max-width: calc(theme('screens.xl') - 1px))");
-      addVariant('mbtb-only', "@media screen and (max-width: calc(theme('screens.xl') - 1px))");
+      addVariant('tablet-only', "@media screen and (min-width: theme('screens.sm')) and (max-width: calc(theme('screens.lg') - 1px))");
+      addVariant('mbtb-only', "@media screen and (max-width: calc(theme('screens.lg') - 1px))");
     }),
   ],
 }

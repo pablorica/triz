@@ -31,7 +31,7 @@
     min-h-[33.333vh] !min-h-[33.333vh] md:min-h-[33.333vh] md:!min-h-[33.333vh]
     min-h-[30vh] !min-h-[30vh] md:min-h-[30vh] md:!min-h-[30vh]
 
-    max-w-[32vw] !max-w-[32vw] md:max-w-[32vw] md:!max-w-[32vw]
+    max-w-[32vw] !max-w-[32vw] md:max-w-[32vw] md:!max-w-[32vw] lg:max-w-[32vw]
     max-w-[50vw] !max-w-[50vw] md:max-w-[50vw] md:!max-w-[50vw]
     max-w-[40vw] !max-w-[40vw] md:max-w-[40vw] md:!max-w-[40vw]
 
@@ -76,6 +76,8 @@
     mobile-only:hidden !mobile-only:hidden
     mobile-only:block !mobile-only:block
     mobile-only:order-first !mobile-only:order-first
+
+    mbtb-only:order-first !mbtb-only:order-first
 
     opacity-0 !opacity-0
     leading-none !leading-none
