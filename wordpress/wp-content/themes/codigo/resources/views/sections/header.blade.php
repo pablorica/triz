@@ -31,6 +31,9 @@
 
     //Get current page id
     $currentPageId = get_the_ID();
+
+    // Check if this is the Coming Soon page
+    $isComingSoon = is_page('coming-soon');
     //Check if the current page is page or post
     if (is_page($currentPageId) || is_single($currentPageId)) {
 
@@ -88,7 +91,17 @@
           ]
         )
     </a>
-    @if (has_nav_menu('primary_navigation'))
+    @if($isComingSoon)
+
+    <div class="col-span-6 md:col-span-3 md:col-start-10
+      flex items-center justify-center"
+    >
+      <p class="text-white font-medium">
+        Coming Soon
+      </p>
+    </div>
+
+    @elseif (has_nav_menu('primary_navigation'))
       <nav class="nav-primary col-span-6 md:col-span-3 md:col-start-10
           flex gap-0 items-center justify-center
         "

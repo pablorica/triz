@@ -8,9 +8,14 @@
   $layoutContainer = function_exists('get_field')
     ? (get_field('layout_container', 'option') ?: 'container-fluid')
     : 'container-fluid';
-    $address = function_exists('get_field')
+  $address = function_exists('get_field')
     ? (get_field('footer_address', 'option') ?: '')
     : '';
+
+  $isComingSoon = is_page('coming-soon');
+  if ($isComingSoon) {
+    return;
+  }
 
 @endphp
 <footer class="content-footer {{$layoutContainer}}">
