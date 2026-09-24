@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.6.6] - 2026-09-23
+
+### Updated
+
+ - Composer php version changed from 8.4 to 8.3 to run in GoDaddy
+
+
 ## [0.6.5] - 2026-09-23
 
 ### Updated
