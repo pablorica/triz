@@ -12,10 +12,11 @@
     ? (get_field('footer_address', 'option') ?: '')
     : '';
 
-  $isComingSoon = is_page('coming-soon');
-  if ($isComingSoon) {
+
+  if (is_page('coming-soon') || is_404()) {
     return;
   }
+
 
 @endphp
 <footer class="content-footer {{$layoutContainer}}">

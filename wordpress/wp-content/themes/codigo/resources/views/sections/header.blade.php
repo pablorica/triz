@@ -34,6 +34,8 @@
 
     // Check if this is the Coming Soon page
     $isComingSoon = is_page('coming-soon');
+    //Check if 404
+    $is404 = is_404();
     //Check if the current page is page or post
     if (is_page($currentPageId) || is_single($currentPageId)) {
 
@@ -98,6 +100,16 @@
     >
       <p class="text-white font-medium">
         Coming Soon
+      </p>
+    </div>
+
+    @elseif($is404)
+
+    <div class="col-span-6 md:col-span-3 md:col-start-10
+      flex items-center justify-center"
+    >
+      <p class="text-white font-medium">
+        Page Not Found
       </p>
     </div>
 
