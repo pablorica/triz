@@ -31,6 +31,7 @@
     min-h-[33.333vh] !min-h-[33.333vh] md:min-h-[33.333vh] md:!min-h-[33.333vh]
     min-h-[30vh] !min-h-[30vh] md:min-h-[30vh] md:!min-h-[30vh]
 
+    max-w-[32vw] !max-w-[32vw] md:max-w-[32vw] md:!max-w-[32vw]
     max-w-[50vw] !max-w-[50vw] md:max-w-[50vw] md:!max-w-[50vw]
     max-w-[40vw] !max-w-[40vw] md:max-w-[40vw] md:!max-w-[40vw]
 
